@@ -18,7 +18,6 @@ You can click the Preview link to take a look at your changes.
 
 - 💞️ I’m looking to collaborate on some projects about software development.
 
-<h3 align="left">Connect with me:</h3>
 <p align="left">
 </p>
 
