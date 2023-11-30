@@ -4,11 +4,11 @@ You can click the Preview link to take a look at your changes.
 --->
 
 <h1 align="center">Hi 👋, I'm guinotix</h1>
-<h3 align="center">A passionate CS student from Spain</h3>
+<h3 align="center">A passionate software engineer from Spain</h3>
 
 <p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=guinotix" alt="guinotix" /></a> </p>
 
-- 📚 I'm studying the Bachelor's degree in Computer Engineering at Universitat Jaume I in Castellón (Spain).
+- 🎓 I have a Bachelor's degree in Computer Engineering at Universitat Jaume I in Castellón (Spain).
 
 - 👀 I’m interested in developing software (mostly as a back-end profile).
 
