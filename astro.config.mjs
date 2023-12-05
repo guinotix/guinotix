@@ -8,4 +8,5 @@ export default defineConfig({
         alpine(),
         tailwind(),
     ],
+    site: 'https://guinotix.github.io',
 });
