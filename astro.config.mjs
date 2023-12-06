@@ -8,9 +8,4 @@ export default defineConfig({
         alpine(),
         tailwind(),
     ],
-    output: 'static',
-    site: 'https://guinotix.github.io',
-    build: {
-        assets: 'astro'
-    }
 });
