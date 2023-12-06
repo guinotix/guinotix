@@ -6,7 +6,9 @@ import tailwind from '@astrojs/tailwind';
 export default defineConfig({
     integrations: [
         alpine(),
-        tailwind(),
+        tailwind({
+            applyBaseStyles: false
+        }),
     ],
     site: 'https://guinotix.github.io',
 });
