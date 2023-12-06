@@ -6,9 +6,12 @@ import tailwind from '@astrojs/tailwind';
 export default defineConfig({
     integrations: [
         alpine(),
-        tailwind({
-            applyBaseStyles: false
-        }),
+        tailwind(),
     ],
+    output: 'static',
+    outDir: './docs',
     site: 'https://guinotix.github.io',
+    build: {
+        assets: 'astro'
+    }
 });
