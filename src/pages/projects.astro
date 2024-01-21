@@ -5,17 +5,65 @@ import Card from '../components/Card.astro';
 import PageHeader from '../components/PageHeader.astro';
 
 import LogoAstro from '../components/logos/LogoAstro.astro';
+import LogoLaravel from '../components/logos/LogoLaravel.astro';
+import LogoMySQL from '../components/logos/LogoMySQL.astro';
+import LogoResend from '../components/logos/LogoResend.astro';
 import LogoTailwind from '../components/logos/LogoTailwind.astro';
 ---
 
 <Layout title="My Projects | guinotix">
 
-    <PageHeader slot="bg_header">
+    <PageHeader slot="section_title">
 		<p class="text-2xl md:text-5xl">Projects</p>
         <p class="text-lg md:text-2xl mt-4">This is my portfolio where I showcase some of the side projects I've worked in</p>
 	</PageHeader>
     
     <div class="grid grid-cols-1 gap-6 lg:gap-8">
+
+        <!-- Sailaway card -->
+        <Card additionalClasses="">
+            <div class="grid grid-cols-1 md:grid-cols-2">
+                <div class="flex justify-center items-center">
+                    <img src="sailaway_ex_port.png" alt="Sailaway project presentation image" class="dark:text-white">
+                </div>
+                <div class="flex flex-col">
+                    <h2 class="mt-2 text-2xl font-semibold text-gray-900 dark:text-white">Sailaway</h2>
+                    <p class="mt-4 text-gray-500 dark:text-gray-400 text-xl leading-relaxed">
+                        Sailaway is a nearly identical adaptation of my final degree project, which I've done in 2023.
+                        Due to implementation reasons of that project, the original one is not visible,
+                        and that's why I've made a replica as faithful as possible,
+                        omitting things like brand image and some special features.
+                    </p>
+                    <p class="mt-4 text-gray-500 dark:text-gray-400 text-xl leading-relaxed">
+                        Sailaway is a web-based application designed to facilitate the reservations and management of sail trips.
+                        It provides a user-friendly interface for customers to browse for available trips,
+                        select the passengers and make reservations.
+                        Additionally, it offers some administrative tools for managing trips, boats, reservations and payments,
+                        as well as customer information.
+                    </p>
+                    <p class="mt-4 text-gray-500 dark:text-gray-400 text-xl leading-relaxed">
+                        (Work in progress...)
+                    </p>
+                    <div class="mt-2">
+                        <span class="text-xl font-medium dark:text-white">Technologies used:</span>
+                        <div class="flex flex-row space-x-2">
+                            <a href="https://laravel.com" target="_blank" rel="noopener noreferrer">
+                                <LogoLaravel />
+                            </a>
+                            <a href="https://www.mysql.com" target="_blank" rel="noopener noreferrer">
+                                <LogoMySQL />
+                            </a>
+                            <a href="https://resend.com/home" target="_blank" rel="noopener noreferrer">
+                                <LogoResend />
+                            </a>
+                            <a href="https://tailwindcss.com" target="_blank" rel="noopener noreferrer">
+                                <LogoTailwind />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </Card>
         
         <!-- My portfolio card -->
         <Card additionalClasses="">
