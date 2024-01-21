@@ -4,6 +4,7 @@ import Layout from '../layouts/Layout.astro';
 import CardTech from '../components/CardTech.astro';
 import Card from '../components/Card.astro';
 import PageHeader from '../components/PageHeader.astro';
+import ProfilePicture from '../components/ProfilePicture.astro';
 
 import LogoAngular from '../components/logos/LogoAngular.astro';
 import LogoExpress from '../components/logos/LogoExpress.astro';
@@ -15,7 +16,9 @@ import LogoTailwind from '../components/logos/LogoTailwind.astro';
 
 <Layout title="Home | guinotix">
 
-    <PageHeader slot="bg_header">
+    <ProfilePicture slot="profile_picture" />
+
+    <PageHeader slot="section_title">
 		<div>
             <span class="text-lg md:text-2xl">Hi, my name is</span>
             <br class="mt-3">
