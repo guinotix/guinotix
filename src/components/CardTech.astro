@@ -1,4 +1,6 @@
 ---
+import Badge from './BadgeLevel.astro';
+
 interface Props {
 	technology: string;
 	level: string;
@@ -14,7 +16,7 @@ const { technology, level, usages } = Astro.props;
 		<p class="text-xl font-semibold dark:text-gray-100">{technology}</p>
 	</div>
 	<div class="text-lg mt-2 dark:text-gray-200">
-		<p class="font-medium">Level: {level}</p>
+		<Badge level={level} />
 		<p>{usages}</p>
 	</div>
 </article>
