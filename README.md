@@ -37,8 +37,8 @@
 This project is licensed under the MIT License (check the [LICENSE](https://github.com/guinotix/portfolio/blob/master/LICENSE) file)
 
 ## 📝 TODOs
-- [ ] Add dark mode toggle
+- [x] Change main banner distribution (own picture)
+- [x] Add dark mode toggle
 - [ ] Add some college projects
 - [ ] Add details page for Sailaway project
 - [ ] Try new layout for the index page
-- [x] Change main banner distribution (own picture)
