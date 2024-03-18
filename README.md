@@ -39,6 +39,6 @@ This project is licensed under the MIT License (check the [LICENSE](https://gith
 ## 📝 TODOs
 - [x] Change main banner distribution (own picture)
 - [x] Add dark mode toggle
-- [ ] Add details page for Sailaway project {WIP}
-- [ ] Add some college projects
+- [x] Add details page for Sailaway project
+- [ ] Add some college projects {WIP}
 - [ ] Try new layout for the index page

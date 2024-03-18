@@ -14,8 +14,8 @@ import LogoTailwind from '../components/logos/LogoTailwind.astro';
 <Layout title="My Projects | guinotix">
 
     <PageHeader slot="section_title">
-		<p class="text-2xl md:text-5xl">Projects</p>
-        <p class="text-lg md:text-2xl mt-4">This is my portfolio where I showcase some of the side projects I've worked in</p>
+		<p class="text-2xl md:text-5xl leading-relaxed">Projects</p>
+        <p class="text-lg md:text-2xl mt-4 leading-relaxed">This is my portfolio where I showcase some of the side projects I've worked in</p>
 	</PageHeader>
     
     <div class="grid grid-cols-1 gap-6 lg:gap-8">
@@ -24,7 +24,7 @@ import LogoTailwind from '../components/logos/LogoTailwind.astro';
         <Card additionalClasses="">
             <div class="grid grid-cols-1 md:grid-cols-2">
                 <div class="flex justify-center items-center">
-                    <img src="sailaway_ex_port.png" alt="Sailaway project presentation image" class="dark:text-white">
+                    <img class="rounded-2xl scale-90" src="/sailaway/000.png" alt="Sailaway project presentation image" class="dark:text-white">
                 </div>
                 <div class="flex flex-col">
                     <h2 class="mt-2 text-2xl font-semibold text-gray-900 dark:text-white">Sailaway</h2>
@@ -64,7 +64,7 @@ import LogoTailwind from '../components/logos/LogoTailwind.astro';
         <Card additionalClasses="">
             <div class="grid grid-cols-1 md:grid-cols-2">
                 <div class="flex justify-center items-center">
-                    <img src="portfolio_ex_port.png" alt="Portfolio project presentation image">
+                    <img src="portfolio_ex_port.png" alt="Portfolio project presentation image" class="dark:text-white">
                 </div>
                 <div class="flex flex-col">
                     <h2 class="mt-2 text-2xl font-semibold text-gray-900 dark:text-white">Alejandro Guinot's Portfolio</h2>

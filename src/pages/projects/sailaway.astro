@@ -8,7 +8,7 @@ import PageHeader from '../../components/PageHeader.astro';
 <Layout title="Sailaway | guinotix">
 
     <PageHeader slot="section_title">
-		<p class="text-2xl md:text-5xl">Sailaway</p>
+		<p class="text-5xl leading-relaxed">Sailaway ⛵</p>
 	</PageHeader>
     
     <div class="grid grid-cols-1 gap-6 lg:gap-8">
@@ -50,8 +50,15 @@ import PageHeader from '../../components/PageHeader.astro';
 
         <Card additionalClasses="">
             <h2 class="mt-2 text-2xl font-semibold text-gray-900 dark:text-white">Overview</h2>
-            <div class="mt-4 text-gray-500 text-xl leading-relaxed dark:text-gray-400">
-                <p>Work in progress...</p>
+            <p class="mt-4 text-gray-500 text-xl leading-relaxed dark:text-gray-400">
+                Here are some pictures displaying the UI of Sailaway:
+            </p>
+            <div class="space-y-1 dark:text-white">
+                <img class="scale-90 rounded-2xl" src="/sailaway/100.png" alt="Main dashboard">
+                <img class="scale-90 rounded-2xl" src="/sailaway/200.png" alt="Calendar view">
+                <img class="scale-90 rounded-2xl" src="/sailaway/300.png" alt="Exit date management">
+                <img class="scale-90 rounded-2xl" src="/sailaway/400.png" alt="New reservation data">
+                <img class="scale-90 rounded-2xl" src="/sailaway/500.png" alt="History of payment status">
             </div>
         </Card>
     </div>
