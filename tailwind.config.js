@@ -1,3 +1,5 @@
+import defaultTheme from 'tailwindcss/defaultTheme'
+
 /** @type {import('tailwindcss').Config} */
 export default {
     darkMode: 'class',
@@ -6,7 +8,11 @@ export default {
         extend: {
             backgroundImage: {
 				'sunset': "url('/sunset.jpg')",
-			}
+                'sailaway': "url('/sailaway/sailaway_banner.webp')"
+			},
+            fontFamily: {
+                sans: ['Reddit Mono Variable', ...defaultTheme.fontFamily.sans]
+            },
         },
     },
     plugins: [],

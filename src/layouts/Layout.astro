@@ -1,4 +1,6 @@
 ---
+import '@fontsource-variable/reddit-mono'
+
 import Footer from '../components/Footer.astro';
 import Navbar from '../components/Navbar.astro';
 
@@ -7,6 +9,15 @@ interface Props {
 }
 
 const { title } = Astro.props;
+
+const splittedTitle = title.split(" | ");
+
+let bannerBG;
+if (splittedTitle[0] == "Sailaway") {
+	bannerBG = "bg-sailaway";
+} else {
+	bannerBG = "bg-sunset";
+}
 ---
 
 <!doctype html>
@@ -25,7 +36,7 @@ const { title } = Astro.props;
 			<Navbar />
 			<main>
 				
-				<div class="flex flex-col items-center justify-center h-[65vh] bg-sunset bg-fixed bg-no-repeat bg-cover bg-center -translate-y-0">
+				<div class=`flex flex-col items-center justify-center h-[65vh] ${bannerBG} bg-fixed bg-no-repeat bg-cover bg-center -translate-y-0`>
 					<slot name="profile_picture" />
 					<slot name="section_title" />
 				</div>
