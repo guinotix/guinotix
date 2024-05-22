@@ -6,11 +6,11 @@ import Card from '../components/Card.astro';
 import PageHeader from '../components/PageHeader.astro';
 import ProfilePicture from '../components/ProfilePicture.astro';
 
-import LogoAngular from '../components/logos/LogoAngular.astro';
 import LogoExpress from '../components/logos/LogoExpress.astro';
-import LogoFirebase from '../components/logos/LogoFirebase.astro';
+import LogoInertia from '../components/logos/LogoInertia.astro';
 import LogoLaravel from '../components/logos/LogoLaravel.astro';
 import LogoMySQL from '../components/logos/LogoMySQL.astro';
+import LogoReact from '../components/logos/LogoReact.astro';
 import LogoTailwind from '../components/logos/LogoTailwind.astro';
 ---
 
@@ -29,7 +29,7 @@ import LogoTailwind from '../components/logos/LogoTailwind.astro';
         <Card additionalClasses="">
             <h2 class="mt-2 text-2xl font-semibold text-gray-900 dark:text-white">About me</h2>
             <div class="mt-4 text-gray-500 text-xl leading-relaxed dark:text-gray-400">
-                <p>¡Hola! I'm Alejandro, a Junior Software Engineer based in Spain. My main expertise is <strong>backend web development</strong> using technologies like <a class="hover:underline" href="https://nodejs.org/en" target="_blank" rel="noopener noreferrer"><strong>Node.js</strong></a>, <a class="hover:underline" href="https://expressjs.com" target="_blank" rel="noopener noreferrer"><strong>Express.js</strong></a>, <a class="hover:underline" href="https://laravel.com" target="_blank" rel="noopener noreferrer"><strong>Laravel</strong></a> and <strong>SQL databases</strong>.</p>
+                <p>¡Hola! I'm Alejandro, a Junior Software Engineer based in Spain. My main expertise is <strong>backend web development</strong> using technologies like <a class="hover:underline" href="https://expressjs.com" target="_blank" rel="noopener noreferrer"><strong>Express.js</strong></a>, <a class="hover:underline" href="https://laravel.com" target="_blank" rel="noopener noreferrer"><strong>Laravel</strong></a> and <strong>SQL databases</strong>.</p>
                 <p class="mt-2">I like solving problems and building web applications that are fast and easy to interact with for both final users and developers.</p>
                 <p class="mt-2">Also, I enjoy my free time both listening and playing music, and collecting card games.</p>
             </div>
@@ -50,12 +50,6 @@ import LogoTailwind from '../components/logos/LogoTailwind.astro';
             <CardTech technology='Express.js' level='Medium' usages='College and side projects'>
                 <LogoExpress />
             </CardTech>
-            <CardTech technology='Firebase' level='Medium' usages='College and side projects'>
-                <LogoFirebase />
-            </CardTech>
-            <CardTech technology='Angular' level='Basic' usages='College projects'>
-                <LogoAngular />
-            </CardTech>
             <CardTech technology='Laravel' level='Medium' usages='College projects'>
                 <LogoLaravel />
             </CardTech>
@@ -64,6 +58,12 @@ import LogoTailwind from '../components/logos/LogoTailwind.astro';
             </CardTech>
             <CardTech technology='MySQL' level='Medium' usages='College and side projects'>
                 <LogoMySQL />
+            </CardTech>
+            <CardTech technology='Inertia.js' level='Learning' usages='Side projects'>
+                <LogoInertia />
+            </CardTech>
+            <CardTech technology='React' level='Learning' usages='Side projects'>
+                <LogoReact />
             </CardTech>
 		</div>
     </Card>
