@@ -9,15 +9,6 @@ interface Props {
 }
 
 const { title } = Astro.props;
-
-const splittedTitle = title.split(" | ");
-
-let bannerBG;
-if (splittedTitle[0] == "Sailaway") {
-	bannerBG = "bg-sailaway";
-} else {
-	bannerBG = "bg-sunset";
-}
 ---
 
 <!doctype html>
@@ -31,18 +22,12 @@ if (splittedTitle[0] == "Sailaway") {
 		<script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/persist@3.x.x/dist/cdn.min.js"></script>
 		<title>{title}</title>
 	</head>
-	<body x-cloak x-data="{darkMode: $persist(false)}" :class="{'dark': darkMode === true}" class="font-sans antialiased">
-		<div class="min-h-screen">
+	<body class="font-sans antialiased">
+		<div class="min-h-screen bg-gradient-to-r from-[#1d043c] from-10% via-[#3c156e] via-30% to-[#451e4a] to-90% text-slate-100">
 			<Navbar />
 			<main>
-				
-				<div class=`flex flex-col items-center justify-center h-[65vh] ${bannerBG} bg-fixed bg-no-repeat bg-cover bg-center -translate-y-0`>
-					<slot name="profile_picture" />
-					<slot name="section_title" />
-				</div>
-
-				<div class="relative min-h-screen sm:flex sm:flex-col sm:justify-center sm:items-center bg-gray-100 selection:bg-violet-500 selection:text-white dark:bg-gray-900">
-					<div class="max-w-8xl mx-auto p-6 lg:p-8">
+				<div class="relative min-h-screen sm:flex sm:flex-col sm:justify-center sm:items-center selection:bg-violet-500 selection:text-white">
+					<div class="max-w-full mx-auto">
 						<slot />
 						<Footer />
 					</div>
@@ -54,5 +39,8 @@ if (splittedTitle[0] == "Sailaway") {
 <style is:global>
 	[x-cloak] {
 		display: none !important;
+	}
+	html {
+		scroll-behavior: smooth;
 	}
 </style>

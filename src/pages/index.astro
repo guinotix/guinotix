@@ -2,8 +2,6 @@
 import Layout from '../layouts/Layout.astro';
 
 import CardTech from '../components/CardTech.astro';
-import Card from '../components/Card.astro';
-import PageHeader from '../components/PageHeader.astro';
 import ProfilePicture from '../components/ProfilePicture.astro';
 
 import LogoExpress from '../components/logos/LogoExpress.astro';
@@ -12,41 +10,62 @@ import LogoLaravel from '../components/logos/LogoLaravel.astro';
 import LogoMySQL from '../components/logos/LogoMySQL.astro';
 import LogoReact from '../components/logos/LogoReact.astro';
 import LogoTailwind from '../components/logos/LogoTailwind.astro';
+import LogoStripe from '../components/logos/LogoStripe.astro';
+import LogoFilament from '../components/logos/LogoFilament.astro';
+import LogoResend from '../components/logos/LogoResend.astro';
+
+import GithubIcon from '../components/icons/GithubIcon.astro';
+import LinkedInIcon from '../components/icons/LinkedInIcon.astro';
+import MailIcon from '../components/icons/MailIcon.astro';
+
+const name = ["<Alejandro", "Guinot />"];
+const role = "Junior Software Engineer";
+
+const aboutMe = [
+    "¡Hola! This is Alejandro, a Junior Software Engineer based in Spain. I ended my studies in Computer Engineering at Universitat Jaume I (Castellón de la Plana) with the Software Engineering specialization. I started my journey as a web developer working in a company that offers business IT solutions, where I expanded my knowledge and enhanced my abilities when writing code. My main expertise is backend web development using technologies like Express.js, Laravel and SQL databases.",
+    "Currently, I am a web knowledge advisor of an association and, at the same time, I am building web applications that are fast and easy to interact with for both final users and developers.",
+    "Also, I enjoy my free time both listening and playing music, and collecting card games.",
+];
+
+const projectsInfo = {
+    mbp: "This project is a full-stack web application I developed as a serious challenge. After Sailaway I decided to start one with more ambition for my future as a software developer. Music is one of my hobbies and I spend time looking for some records online so, why not building a project related to this? That's why I came with the idea of building an E-commerce platform powered with some functionalities and styles based on bands that I follow.",
+    sailaway: "Sailaway is a nearly identical adaptation of my final degree project, which I have done in 2023. Due to implementation reasons of that project, the original one is not visible, and that's why I made a replica as faithful as possible, omitting things like brand image and some special features."
+}
 ---
 
 <Layout title="Home | guinotix">
 
-    <ProfilePicture slot="profile_picture" />
-
-    <PageHeader slot="section_title">
-		<span class="text-lg md:text-2xl">Hi, my name is</span>
-        <br class="mt-3">
-        <span class="text-2xl md:text-5xl">Alejandro Guinot</span>
-        <p class="text-lg md:text-2xl mt-4">Junior Software Engineer based in Spain</p>
-	</PageHeader>
-
-	<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        <Card additionalClasses="">
-            <h2 class="mt-2 text-2xl font-semibold text-gray-900 dark:text-white">About me</h2>
-            <div class="mt-4 text-gray-500 text-xl leading-relaxed dark:text-gray-400">
-                <p>¡Hola! I'm Alejandro, a Junior Software Engineer based in Spain. My main expertise is <strong>backend web development</strong> using technologies like <a class="hover:underline" href="https://expressjs.com" target="_blank" rel="noopener noreferrer"><strong>Express.js</strong></a>, <a class="hover:underline" href="https://laravel.com" target="_blank" rel="noopener noreferrer"><strong>Laravel</strong></a> and <strong>SQL databases</strong>.</p>
-                <p class="mt-2">I like solving problems and building web applications that are fast and easy to interact with for both final users and developers.</p>
-                <p class="mt-2">Also, I enjoy my free time both listening and playing music, and collecting card games.</p>
-            </div>
-        </Card>
-        <Card additionalClasses="">
-			<h2 class="mt-2 text-2xl font-semibold text-gray-900 dark:text-white">Education</h2>
-            <p class="mt-4 text-gray-500 text-xl leading-relaxed dark:text-gray-400">Sept 2017 - Oct 2023: Bachelor's Degree in Computer Engineering at Universitat Jaume I</p>
-            <p class="text-lg dark:text-gray-200">Software Engineering specialization</p>
-            <h2 class="mt-6 text-2xl font-semibold text-gray-900 dark:text-white">Experience</h2>
-            <p class="mt-2 text-gray-500 text-xl leading-relaxed dark:text-gray-400">Mar 2023 - Jun 2023: Web Developer Internship at Angal Informática S.L.</p>
-            <p class="text-lg dark:text-gray-200">Full-stack implementation of a reservation managing system for boat trips using modern frameworks and styled UI.</p>
-        </Card>
+	<div class="grid grid-cols-1 sm:grid-cols-2 place-items-center justify-center min-h-screen">
+        <div class="flex flex-col sm:items-center justify-center my-12 p-2">
+		    <div class="text-5xl font-semibold">{name[0]}<br>{name[1]}</div>
+		    <p class="py-3">{role}</p>
+		    <div class="space-x-6">
+		    	<a aria-label="mail" href="mailto:guinotix.dev@gmail.com" class="group inline-flex items-center hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-violet-500">
+    	    	    <MailIcon />
+    	    	</a>
+    	    	<a aria-label="github" href="https://github.com/guinotix" class="group inline-flex items-center hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-violet-500">
+    	    	    <GithubIcon />
+    	    	</a>
+    	    	<a aria-label="linkedin" href="https://www.linkedin.com/in/guinotix-dev" class="group inline-flex items-center hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-violet-500">
+    	    	    <LinkedInIcon />
+    	    	</a>
+		    </div>
+	    </div>
+        <ProfilePicture />
     </div>
 
-    <Card additionalClasses="mt-6">
-        <h2 class="mt-2 text-2xl font-semibold text-gray-900 dark:text-white">Technologies</h2>
-		<div class="grid grid-cols-1 sm:grid-cols-3 gap-2 mt-4">
+    <section id="about" class="mx-10 py-4">
+        <h2 class="my-2 text-2xl font-semibold text-white">About me</h2>
+        <div class="text-md leading-relaxed">
+            {Array.from({ length: 3 }, (_, i) => i + 1).map((number) => (
+                <p class="mt-2">{aboutMe[number-1]}</p>
+            ))}
+        </div>
+    </section>
+
+    <section id="techs" class="mx-10 py-16">
+        <h2 class="mt-2 text-2xl font-semibold text-white">Technologies</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 mt-4">
             <CardTech technology='Express.js' level='Medium' usages='College and side projects'>
                 <LogoExpress />
             </CardTech>
@@ -66,16 +85,65 @@ import LogoTailwind from '../components/logos/LogoTailwind.astro';
                 <LogoReact />
             </CardTech>
 		</div>
-    </Card>
+    </section>
 
-	<section class="flex justify-center mt-12">
-		<button type="submit" class="inline-flex items-center px-4 py-2 bg-violet-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-violet-700 focus:bg-violet-700 active:bg-violet-900 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition ease-in-out duration-150 hover:outline hover:outline-2 hover:outline-violet-500">
-			<a href="/projects">
-                <span class="text-lg">
-                    See my projects
-                </span>
-            </a>
-		</button>
+    <section id="projects" class="mx-10 py-16">
+        <h2 class="mt-2 text-2xl font-semibold text-white">Projects</h2>
+		<p class="mt-2">Here I showcase some of the projects I have worked in:</p>
+        <div class="mt-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 items-start gap-6 p-6">
+                <div class="flex flex-col justify-center items-center">
+                    <img class="rounded-2xl scale-90" src="mbp_ex_port.png" alt="MBP project presentation">
+                    <div class="flex flex-col justify-center items-center">
+                        <h2 class="mt-2 text-2xl font-semibold text-white">Music Band Page</h2>
+                        <p class="mt-4 text-base leading-relaxed mx-8">{projectsInfo.mbp}</p>
+                    </div>
+                    <p class="mt-4 text-base leading-relaxed">
+                        <button class="inline-flex items-center px-4 py-2 bg-violet-800 border border-transparent rounded-md font-semibold text-base text-white uppercase tracking-widest hover:bg-violet-700 focus:bg-violet-700 active:bg-violet-900 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition ease-in-out duration-150 hover:outline hover:outline-2 hover:outline-violet-500">
+                            <a href="/projects/musicbandpage">
+                                More info...
+                            </a>
+                        </button>
+                    </p>
+                    <div class="mt-4">
+                        <span class="text-base font-medium text-white">Technologies used:</span>
+                        <div class="flex flex-row space-x-2">
+                            <LogoLaravel />
+                            <LogoInertia />
+                            <LogoReact />
+                            <LogoTailwind />
+                            <LogoStripe />
+                            <LogoFilament />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col justify-center items-center">
+                    <img class="rounded-2xl scale-90" src="/sailaway/000.png" alt="Sailaway project presentation">
+                    <div class="flex flex-col justify-center items-center">
+                        <h2 class="mt-2 text-2xl font-semibold text-white">Sailaway</h2>
+                        <p class="mt-4 text-base leading-relaxed mx-8">{projectsInfo.sailaway}</p>
+                        <p class="mt-4 text-base leading-relaxed">
+                            <button class="inline-flex items-center px-4 py-2 bg-violet-800 border border-transparent rounded-md font-semibold text-base text-white uppercase tracking-widest hover:bg-violet-700 focus:bg-violet-700 active:bg-violet-900 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition ease-in-out duration-150 hover:outline hover:outline-2 hover:outline-violet-500">
+                                <a href="/projects/sailaway">
+                                    More info...
+                                </a>
+                            </button>
+                        </p>
+                        <div class="mt-4">
+                            <span class="text-base font-medium text-white">Technologies used:</span>
+                            <div class="flex flex-row space-x-2">
+                                <LogoLaravel />
+                                <LogoMySQL />
+                                <LogoResend />
+                                <LogoTailwind />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </section>
 	
 </Layout>

@@ -1,28 +1,27 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-
-import Card from '../../components/Card.astro';
-import PageHeader from '../../components/PageHeader.astro';
 ---
 
 <Layout title="Sailaway | guinotix">
 
-    <PageHeader slot="section_title">
-		<p class="text-5xl leading-relaxed">Sailaway ⛵</p>
-	</PageHeader>
+    <section class="max-w-xl mx-auto p-6 bg-opacity-80 rounded-lg text-white">
+        <div class="flex flex-col items-center justify-center text-5xl leading-relaxed">
+            <p>Sailaway</p><p>⛵</p>
+        </div>
+    </section>
     
     <div class="grid grid-cols-1 gap-6 lg:gap-8">
-        <Card additionalClasses="">
-            <h2 class="mt-2 text-2xl font-semibold text-gray-900 dark:text-white">Description</h2>
-            <p class="mt-4 mb-4 text-gray-500 text-xl leading-relaxed dark:text-gray-400">
+        <article class="scale-100 p-6 flex flex-col">
+            <h2 class="mt-2 text-2xl font-semibold text-white">Description</h2>
+            <p class="mt-4 mb-4 text-xl leading-relaxed">
                 Sailaway is a web-based application designed to facilitate the reservations and management of sail trips.
                 It provides a user-friendly interface for customers to browse for available trips,
                 select the passengers and make reservations.
                 Additionally, it offers some administrative tools for managing trips, boats, reservations and payments,
                 as well as customer information.
             </p>
-            <h2 class="mt-2 text-2xl font-semibold text-gray-900 dark:text-white">Features</h2>
-            <div class="mt-4 mb-4 text-gray-500 text-xl leading-relaxed dark:text-gray-400">
+            <h2 class="mt-2 text-2xl font-semibold text-white">Features</h2>
+            <div class="mt-4 mb-4 text-xl leading-relaxed">
                 <ul class="list-disc list-inside">
                     <li>User authentication and authorization</li>
                     <li>Browse and search availabe sail trips</li>
@@ -33,34 +32,34 @@ import PageHeader from '../../components/PageHeader.astro';
                     <li>Cancellations</li>
                 </ul>
             </div>
-            <h2 class="mt-4 text-2xl font-semibold text-gray-900 dark:text-white">Implementation details</h2>
-            <p class="mt-4 mb-2 text-gray-500 text-xl leading-relaxed dark:text-gray-400">
+            <h2 class="mt-4 text-2xl font-semibold text-white">Implementation details</h2>
+            <p class="mt-4 mb-2 text-xl leading-relaxed">
                 As a web application, Sailaway has been coded using <strong>Laravel</strong> as the main framework.
                 It provides a lot of solutions that were addressed by the stakeholders, so the development was a really great experience.
                 A <strong>MySQL database</strong> is used to store the data of the application.
                 The testing environment is powered by <strong>PHPUnit</strong> to ensure that database accesses and modifications are done properly for the use cases defined.
             </p>
-            <p class="mb-4 text-gray-500 text-xl leading-relaxed dark:text-gray-400">
+            <p class="mb-4 text-xl leading-relaxed">
                 Some things that Laravel provided were <strong>Authentication</strong> and <strong>Authorization</strong>, the usage of <strong>Eloquent ORM</strong> to interact easier with the database, <strong>Database migrations</strong> to define a proper database schema, <strong>Validation</strong> of the HTTP requests and finally the management of <strong>Notifications</strong> via email.
             </p>
-            <p class="mb-4 text-gray-500 text-xl leading-relaxed dark:text-gray-400">
+            <p class="mb-4 text-xl leading-relaxed">
                 About the frontend tools, <strong>Blade templates</strong> paired with <strong>Tailwind CSS</strong> are used to define all the pages with a simple design used a color pallete provided by the stakeholder.
             </p>
-        </Card>
+        </article>
 
-        <Card additionalClasses="">
-            <h2 class="mt-2 text-2xl font-semibold text-gray-900 dark:text-white">Overview</h2>
-            <p class="mt-4 text-gray-500 text-xl leading-relaxed dark:text-gray-400">
+        <article class="scale-100 p-6 flex flex-col">
+            <h2 class="mt-2 text-2xl font-semibold text-white">Overview</h2>
+            <p class="mt-4 text-xl leading-relaxed">
                 Here are some pictures displaying the UI of Sailaway:
             </p>
-            <div class="space-y-1 dark:text-white">
+            <div class="space-y-1 flex flex-col items-center">
                 <img class="scale-90 rounded-2xl" src="/sailaway/100.png" alt="Main dashboard">
                 <img class="scale-90 rounded-2xl" src="/sailaway/200.png" alt="Calendar view">
                 <img class="scale-90 rounded-2xl" src="/sailaway/300.png" alt="Exit date management">
                 <img class="scale-90 rounded-2xl" src="/sailaway/400.png" alt="New reservation data">
                 <img class="scale-90 rounded-2xl" src="/sailaway/500.png" alt="History of payment status">
             </div>
-        </Card>
+        </article>
     </div>
     
 </Layout>

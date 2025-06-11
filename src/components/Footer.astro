@@ -1,27 +1,7 @@
----
-import DarkModeIcon from './icons/DarkMode.astro';
-import GithubIcon from './icons/GithubIcon.astro';
-import LinkedInIcon from './icons/LinkedInIcon.astro';
-import MailIcon from './icons/MailIcon.astro';
----
-
-<div class="flex justify-center mt-16 px-0 bottom-0 sm:items-center sm:justify-between">
-    <div class="text-center text-sm text-gray-500 dark:text-gray-400 sm:text-left">
-        <div class="flex items-center gap-2">
-            <DarkModeIcon />
-            <span>Copyright © 2024 Alejandro Guinot</span>
-        </div>
-    </div>
-
-    <div class="ml-4 text-center text-sm text-gray-500 dark:text-gray-400 sm:text-right sm:ml-0">
-        <a href="mailto:al375927@uji.es" class="group inline-flex items-center hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-violet-500">
-            <MailIcon />
-        </a>
-        <a href="https://github.com/guinotix" class="group inline-flex items-center hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-violet-500">
-            <GithubIcon />
-        </a>
-        <a href="https://www.linkedin.com/in/guinotix-dev" class="group inline-flex items-center hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-violet-500">
-            <LinkedInIcon />
-        </a>
-    </div>
+<div class="flex items-center justify-center py-16 px-0 bottom-0 gap-2 text-center text-sm text-slate-300">
+    <span>Crafted by 
+        <a href="https://github.com/guinotix" class="group inline-flex items-center hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-violet-500">
+            @guinotix
+        </a> with Astro
+    </span>
 </div>

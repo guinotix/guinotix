@@ -10,12 +10,12 @@ interface Props {
 const { technology, level, usages } = Astro.props;
 ---
 
-<article class="scale-100 p-3 bg-slate-300 dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex flex-col motion-safe:hover:scale-[1.01] transition-all duration-250 hover:outline hover:outline-2 hover:outline-violet-500">
+<article class="scale-100 p-3 bg-gray-800/50 bg-gradient-to-bl from-gray-700/50 via-transparent ring-1 ring-inset ring-white/5 rounded-lg shadow-gray-500/20 shadow-none flex flex-col motion-safe:hover:scale-[1.01] transition-all duration-250 hover:outline hover:outline-2 hover:outline-violet-500">
 	<div class="flex flex-row items-center space-x-3">
 		<slot />
-		<p class="text-xl font-semibold dark:text-gray-100">{technology}</p>
+		<p class="text-xl font-semibold text-gray-100">{technology}</p>
 	</div>
-	<div class="text-lg mt-2 dark:text-gray-200">
+	<div class="text-base space-y-2 mt-2 text-gray-200">
 		<Badge level={level} />
 		<p>{usages}</p>
 	</div>

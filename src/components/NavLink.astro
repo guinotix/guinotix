@@ -1,18 +1,24 @@
 ---
 interface Props {
-    link: string; // link="/" o link="/projects"
+    link: string;
 }
 
 const { link } = Astro.props;
 
 const pathname = new URL(Astro.request.url).pathname;
-const pathMatch = pathname.replace(/\/$/, '') == link.replace(/\/$/, '');
+const pathMatch = pathname.replace(/\/$/, '') === link.replace(/\/$/, '');
+
+const isFragment = link.startsWith("#");
 
 const commonClasses = "inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium leading-5 focus:outline-none transition duration-150 ease-in-out";
-const matchingClasses = `${commonClasses} border-indigo-400 text-gray-900 focus:border-indigo-700 dark:text-slate-100`;
-const nonMatchingClasses = `${commonClasses} border-transparent text-gray-500 focus:text-gray-700 focus:border-gray-300 hover:text-gray-300 hover:border-gray-300`;
+const matchingClasses = `${commonClasses} border-indigo-400 text-slate-100 focus:border-indigo-700`;
+const nonMatchingClasses = `${commonClasses} border-transparent text-gray-400 focus:text-gray-700 focus:border-gray-300 hover:text-gray-300 hover:border-gray-300`;
 
-const classes = link == "/" ? (pathMatch ? matchingClasses : nonMatchingClasses) : (pathMatch && link == link.replace(/\/$/, '') || pathname != "/" ? matchingClasses : nonMatchingClasses);
+const classes = isFragment
+    ? nonMatchingClasses
+    : pathMatch
+        ? matchingClasses
+        : nonMatchingClasses;
 ---
 
 <a class={classes} href={link}>
