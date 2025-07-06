@@ -3,20 +3,19 @@ import Badge from './BadgeLevel.astro';
 
 interface Props {
 	technology: string;
-	level: string;
-	usages: string;
+	main: boolean;
 }
 
-const { technology, level, usages } = Astro.props;
+const { technology, main } = Astro.props;
+
+const colors = main
+	? "bg-emerald-800/50 from-emerald-700/50"
+	: "bg-gray-800/50 from-gray-700/50"
 ---
 
-<article class="scale-100 p-3 bg-gray-800/50 bg-gradient-to-bl from-gray-700/50 via-transparent ring-1 ring-inset ring-white/5 rounded-lg shadow-gray-500/20 shadow-none flex flex-col motion-safe:hover:scale-[1.01] transition-all duration-250 hover:outline hover:outline-2 hover:outline-violet-500">
+<article class={colors + " scale-100 p-2 bg-gradient-to-bl via-transparent ring-1 ring-inset ring-white/5 rounded-lg shadow-gray-500/20 shadow-none flex flex-col motion-safe:hover:scale-[1.01] transition-all duration-250 hover:outline hover:outline-2 hover:outline-violet-500"}>
 	<div class="flex flex-row items-center space-x-3">
 		<slot />
-		<p class="text-xl font-semibold text-gray-100">{technology}</p>
-	</div>
-	<div class="text-base space-y-2 mt-2 text-gray-200">
-		<Badge level={level} />
-		<p>{usages}</p>
+		<p class="text-gray-100">{technology}</p>
 	</div>
 </article>

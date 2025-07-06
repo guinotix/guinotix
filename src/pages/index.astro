@@ -13,6 +13,10 @@ import LogoTailwind from '../components/logos/LogoTailwind.astro';
 import LogoStripe from '../components/logos/LogoStripe.astro';
 import LogoFilament from '../components/logos/LogoFilament.astro';
 import LogoResend from '../components/logos/LogoResend.astro';
+import LogoPHP from '../components/logos/LogoPHP.astro';
+import LogoPython from '../components/logos/LogoPython.astro';
+import LogoJavascript from '../components/logos/LogoJavascript.astro';
+import LogoWordpress from '../components/logos/LogoWordpress.astro';
 
 import GithubIcon from '../components/icons/GithubIcon.astro';
 import LinkedInIcon from '../components/icons/LinkedInIcon.astro';
@@ -65,24 +69,36 @@ const projectsInfo = {
 
     <section id="techs" class="mx-10 py-16">
         <h2 class="mt-2 text-2xl font-semibold text-white">Technologies</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 mt-4">
-            <CardTech technology='Express.js' level='Medium' usages='College and side projects'>
-                <LogoExpress />
-            </CardTech>
-            <CardTech technology='Laravel' level='Medium' usages='College and side projects'>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 mt-4">
+            <CardTech technology='Laravel' main={true}>
                 <LogoLaravel />
             </CardTech>
-            <CardTech technology='Tailwind CSS' level='Basic' usages='College and side projects'>
-                <LogoTailwind />
-            </CardTech>
-            <CardTech technology='MySQL' level='Medium' usages='College and side projects'>
-                <LogoMySQL />
-            </CardTech>
-            <CardTech technology='Inertia.js' level='Basic' usages='Side projects'>
+            <CardTech technology='Inertia.js' main={true}>
                 <LogoInertia />
             </CardTech>
-            <CardTech technology='React' level='Basic' usages='Side projects'>
+            <CardTech technology='React' main={true}>
                 <LogoReact />
+            </CardTech>
+            <CardTech technology='PHP' main={true}>
+                <LogoPHP />
+            </CardTech>
+            <CardTech technology='Tailwind CSS' main={true}>
+                <LogoTailwind />
+            </CardTech>
+            <CardTech technology='Javascript' main={false}>
+                <LogoJavascript />
+            </CardTech>
+            <CardTech technology='MySQL' main={false}>
+                <LogoMySQL />
+            </CardTech>
+            <CardTech technology='Wordpress' main={false}>
+                <LogoWordpress />
+            </CardTech>
+            <CardTech technology='Express.js' main={false}>
+                <LogoExpress />
+            </CardTech>
+            <CardTech technology='Python' main={false}>
+                <LogoPython />
             </CardTech>
 		</div>
     </section>
@@ -91,9 +107,10 @@ const projectsInfo = {
         <h2 class="mt-2 text-2xl font-semibold text-white">Projects</h2>
 		<p class="mt-2">Here I showcase some of the projects I have worked in:</p>
         <div class="mt-4">
-            <div class="grid grid-cols-1 sm:grid-cols-2 items-start gap-6 p-6">
+            <div class="grid grid-cols-1 items-start gap-6 space-y-16">
+
                 <div class="flex flex-col justify-center items-center">
-                    <img class="rounded-2xl scale-90" src="mbp_ex_port.png" alt="MBP project presentation">
+                    <img class="rounded-2xl w-1/4 h-1/4" src="mbp_ex_port.png" alt="MBP project presentation">
                     <div class="flex flex-col justify-center items-center">
                         <h2 class="mt-2 text-2xl font-semibold text-white">Music Band Page</h2>
                         <p class="mt-4 text-base leading-relaxed mx-8">{projectsInfo.mbp}</p>
@@ -105,9 +122,9 @@ const projectsInfo = {
                             </a>
                         </button>
                     </p>
-                    <div class="mt-4">
-                        <span class="text-base font-medium text-white">Technologies used:</span>
-                        <div class="flex flex-row space-x-2">
+                    <div class="mt-4 text-center">
+                        <p class="text-base font-medium text-white">Technologies used:</p>
+                        <div class="flex flex-row place-content-center space-x-2">
                             <LogoLaravel />
                             <LogoInertia />
                             <LogoReact />
@@ -119,7 +136,7 @@ const projectsInfo = {
                 </div>
 
                 <div class="flex flex-col justify-center items-center">
-                    <img class="rounded-2xl scale-90" src="/sailaway/000.png" alt="Sailaway project presentation">
+                    <img class="rounded-2xl w-1/4 h-1/4" src="/sailaway/000.png" alt="Sailaway project presentation">
                     <div class="flex flex-col justify-center items-center">
                         <h2 class="mt-2 text-2xl font-semibold text-white">Sailaway</h2>
                         <p class="mt-4 text-base leading-relaxed mx-8">{projectsInfo.sailaway}</p>
@@ -130,9 +147,9 @@ const projectsInfo = {
                                 </a>
                             </button>
                         </p>
-                        <div class="mt-4">
-                            <span class="text-base font-medium text-white">Technologies used:</span>
-                            <div class="flex flex-row space-x-2">
+                        <div class="mt-4 text-center">
+                            <p class="text-base font-medium text-white">Technologies used:</p>
+                            <div class="flex flex-row place-content-center space-x-2">
                                 <LogoLaravel />
                                 <LogoMySQL />
                                 <LogoResend />
