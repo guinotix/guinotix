@@ -3,20 +3,8 @@ import Layout from '../layouts/Layout.astro';
 
 import CardTech from '../components/CardTech.astro';
 import ProfilePicture from '../components/ProfilePicture.astro';
-
-import LogoExpress from '../components/logos/LogoExpress.astro';
-import LogoInertia from '../components/logos/LogoInertia.astro';
-import LogoLaravel from '../components/logos/LogoLaravel.astro';
-import LogoMySQL from '../components/logos/LogoMySQL.astro';
-import LogoReact from '../components/logos/LogoReact.astro';
-import LogoTailwind from '../components/logos/LogoTailwind.astro';
-import LogoStripe from '../components/logos/LogoStripe.astro';
-import LogoFilament from '../components/logos/LogoFilament.astro';
-import LogoResend from '../components/logos/LogoResend.astro';
-import LogoPHP from '../components/logos/LogoPHP.astro';
-import LogoPython from '../components/logos/LogoPython.astro';
-import LogoJavascript from '../components/logos/LogoJavascript.astro';
-import LogoWordpress from '../components/logos/LogoWordpress.astro';
+import Projects from '../components/Projects.astro';
+import Logo from '../components/Logo.astro';
 
 import GithubIcon from '../components/icons/GithubIcon.astro';
 import LinkedInIcon from '../components/icons/LinkedInIcon.astro';
@@ -31,17 +19,25 @@ const aboutMe = [
     "Also, I enjoy my free time both listening and playing music, and collecting card games.",
 ];
 
-const projectsInfo = {
-    mbp: "This project is a full-stack web application I developed as a serious challenge. After Sailaway I decided to start one with more ambition for my future as a software developer. Music is one of my hobbies and I spend time looking for some records online so, why not building a project related to this? That's why I came with the idea of building an E-commerce platform powered with some functionalities and styles based on bands that I follow.",
-    sailaway: "Sailaway is a nearly identical adaptation of my final degree project, which I have done in 2023. Due to implementation reasons of that project, the original one is not visible, and that's why I made a replica as faithful as possible, omitting things like brand image and some special features."
-}
+const myTechs = [
+    { name: "Laravel", isMain: true },
+    { name: "Inertia", isMain: true },
+    { name: "React", isMain: true },
+    { name: "PHP", isMain: true },
+    { name: "Tailwind", isMain: true },
+    { name: "Javascript", isMain: false },
+    { name: "MySQL", isMain: false },
+    { name: "Wordpress", isMain: false },
+    { name: "Express", isMain: false },
+    { name: "Python", isMain: false },
+];
 ---
 
 <Layout title="Home | guinotix">
 
 	<div class="grid grid-cols-1 sm:grid-cols-2 place-items-center justify-center min-h-screen">
-        <div class="flex flex-col sm:items-center justify-center my-12 p-2">
-		    <div class="text-5xl font-semibold">{name[0]}<br>{name[1]}</div>
+        <div class="flex flex-col items-center justify-center my-12 p-2">
+		    <div class="text-4xl sm:text-5xl font-semibold">{name[0]}<br>{name[1]}</div>
 		    <p class="py-3">{role}</p>
 		    <div class="space-x-6">
 		    	<a aria-label="mail" href="mailto:guinotix.dev@gmail.com" class="group inline-flex items-center hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-violet-500">
@@ -69,98 +65,19 @@ const projectsInfo = {
 
     <section id="techs" class="mx-10 py-16">
         <h2 class="mt-2 text-2xl font-semibold text-white">Technologies</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 mt-4">
-            <CardTech technology='Laravel' main={true}>
-                <LogoLaravel />
-            </CardTech>
-            <CardTech technology='Inertia.js' main={true}>
-                <LogoInertia />
-            </CardTech>
-            <CardTech technology='React' main={true}>
-                <LogoReact />
-            </CardTech>
-            <CardTech technology='PHP' main={true}>
-                <LogoPHP />
-            </CardTech>
-            <CardTech technology='Tailwind CSS' main={true}>
-                <LogoTailwind />
-            </CardTech>
-            <CardTech technology='Javascript' main={false}>
-                <LogoJavascript />
-            </CardTech>
-            <CardTech technology='MySQL' main={false}>
-                <LogoMySQL />
-            </CardTech>
-            <CardTech technology='Wordpress' main={false}>
-                <LogoWordpress />
-            </CardTech>
-            <CardTech technology='Express.js' main={false}>
-                <LogoExpress />
-            </CardTech>
-            <CardTech technology='Python' main={false}>
-                <LogoPython />
-            </CardTech>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 mt-4">
+            {myTechs.map((tech) => (
+                <CardTech technology={tech.name} main={tech.isMain}>
+                    <Logo name={tech.name} />
+                </CardTech>
+            ))}
 		</div>
     </section>
 
     <section id="projects" class="mx-10 py-16">
         <h2 class="mt-2 text-2xl font-semibold text-white">Projects</h2>
 		<p class="mt-2">Here I showcase some of the projects I have worked in:</p>
-        <div class="mt-4">
-            <div class="grid grid-cols-1 items-start gap-6 space-y-16">
-
-                <div class="flex flex-col justify-center items-center">
-                    <img class="rounded-2xl w-1/4 h-1/4" src="mbp_ex_port.png" alt="MBP project presentation">
-                    <div class="flex flex-col justify-center items-center">
-                        <h2 class="mt-2 text-2xl font-semibold text-white">Music Band Page</h2>
-                        <p class="mt-4 text-base leading-relaxed mx-8">{projectsInfo.mbp}</p>
-                    </div>
-                    <p class="mt-4 text-base leading-relaxed">
-                        <button class="inline-flex items-center px-4 py-2 bg-violet-800 border border-transparent rounded-md font-semibold text-base text-white uppercase tracking-widest hover:bg-violet-700 focus:bg-violet-700 active:bg-violet-900 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition ease-in-out duration-150 hover:outline hover:outline-2 hover:outline-violet-500">
-                            <a href="/projects/musicbandpage">
-                                More info...
-                            </a>
-                        </button>
-                    </p>
-                    <div class="mt-4 text-center">
-                        <p class="text-base font-medium text-white">Technologies used:</p>
-                        <div class="flex flex-row place-content-center space-x-2">
-                            <LogoLaravel />
-                            <LogoInertia />
-                            <LogoReact />
-                            <LogoTailwind />
-                            <LogoStripe />
-                            <LogoFilament />
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flex flex-col justify-center items-center">
-                    <img class="rounded-2xl w-1/4 h-1/4" src="/sailaway/000.png" alt="Sailaway project presentation">
-                    <div class="flex flex-col justify-center items-center">
-                        <h2 class="mt-2 text-2xl font-semibold text-white">Sailaway</h2>
-                        <p class="mt-4 text-base leading-relaxed mx-8">{projectsInfo.sailaway}</p>
-                        <p class="mt-4 text-base leading-relaxed">
-                            <button class="inline-flex items-center px-4 py-2 bg-violet-800 border border-transparent rounded-md font-semibold text-base text-white uppercase tracking-widest hover:bg-violet-700 focus:bg-violet-700 active:bg-violet-900 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition ease-in-out duration-150 hover:outline hover:outline-2 hover:outline-violet-500">
-                                <a href="/projects/sailaway">
-                                    More info...
-                                </a>
-                            </button>
-                        </p>
-                        <div class="mt-4 text-center">
-                            <p class="text-base font-medium text-white">Technologies used:</p>
-                            <div class="flex flex-row place-content-center space-x-2">
-                                <LogoLaravel />
-                                <LogoMySQL />
-                                <LogoResend />
-                                <LogoTailwind />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
+        <Projects />
     </section>
 	
 </Layout>
