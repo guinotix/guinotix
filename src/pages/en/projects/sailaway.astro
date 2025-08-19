@@ -1,0 +1,67 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const description = "Sailaway is a web-based application designed to facilitate the reservations and management of sail trips. It provides a user-friendly interface for customers to browse for available trips, select the passengers and make reservations. Additionally, it offers some administrative tools for managing trips, boats, reservations and payments, as well as customer information.";
+
+const features = [
+    "User authentication and authorization",
+    "Browse and search availabe sail trips",
+    "View detailed information about reservations and payments",
+    "Boats, trips, reservations and payments managements for administrators",
+    "Connection with an external point of sale to process payments",
+    "Email notifications for reservation confirmation and updates",
+    "Cancellations",
+];
+---
+
+<Layout title="Sailaway | guinotix">
+
+    <section class="max-w-xl mx-auto p-6 bg-opacity-80 rounded-lg text-white">
+        <div class="flex flex-col items-center justify-center text-5xl leading-relaxed">
+            <p>Sailaway</p><p>⛵</p>
+        </div>
+    </section>
+    
+    <div class="grid grid-cols-1 gap-6 lg:gap-8">
+        <article class="scale-100 p-6 flex flex-col">
+            <h2 class="mt-2 text-lg font-semibold text-white">Description</h2>
+            <p class="mt-4 mb-4 leading-relaxed">{description}</p>
+            <h2 class="mt-2 text-lg font-semibold text-white">Features</h2>
+            <div class="mt-4 mb-4 leading-relaxed">
+                <ul class="list-disc list-inside">
+                    {Array.from({ length: features.length }, (_, i) => i + 1).map((number) => (
+                        <li>{features[number-1]}</li>
+                    ))}
+                </ul>
+            </div>
+            <h2 class="mt-4 text-lg font-semibold text-white">Implementation details</h2>
+            <p class="mt-4 mb-2 leading-relaxed">
+                As a web application, Sailaway has been coded using <strong>Laravel</strong> as the main framework.
+                It provides a lot of solutions that were addressed by the stakeholders, so the development was a really great experience.
+                A <strong>MySQL database</strong> is used to store the data of the application.
+                The testing environment is powered by <strong>PHPUnit</strong> to ensure that database accesses and modifications are done properly for the use cases defined.
+            </p>
+            <p class="mb-4 leading-relaxed">
+                Some things that Laravel provided were <strong>Authentication</strong> and <strong>Authorization</strong>, the usage of <strong>Eloquent ORM</strong> to interact easier with the models, <strong>Database migrations</strong> to define a proper database schema, <strong>Validation</strong> of the HTTP requests and finally the management of <strong>Notifications</strong> via email.
+            </p>
+            <p class="mb-4 leading-relaxed">
+                About the frontend tools, <strong>Blade templates</strong> paired with <strong>Tailwind CSS</strong> are used to define all the pages with a simple design used a color pallete provided by the stakeholder.
+            </p>
+        </article>
+
+        <article class="scale-100 p-6 flex flex-col">
+            <h2 class="mt-2 text-lg font-semibold text-white">Overview</h2>
+            <p class="mt-4 leading-relaxed">
+                Here are some pictures displaying the UI of the application:
+            </p>
+            <div class="space-y-1 flex flex-col items-center">
+                <img class="scale-90 rounded-2xl" src="/sailaway/100.png" alt="Main dashboard">
+                <img class="scale-90 rounded-2xl" src="/sailaway/200.png" alt="Calendar view">
+                <img class="scale-90 rounded-2xl" src="/sailaway/300.png" alt="Exit date management">
+                <img class="scale-90 rounded-2xl" src="/sailaway/400.png" alt="New reservation data">
+                <img class="scale-90 rounded-2xl" src="/sailaway/500.png" alt="History of payment status">
+            </div>
+        </article>
+    </div>
+    
+</Layout>

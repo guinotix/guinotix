@@ -1,7 +1,16 @@
-<div class="flex items-center justify-center py-16 px-0 bottom-0 gap-2 text-center text-sm text-slate-300">
-    <span>Crafted by 
-        <a href="https://github.com/guinotix" class="group inline-flex items-center hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-violet-500">
+---
+import LangPicker from "./LangPicker.astro"
+
+import { getLangFromUrl, useTranslations } from '../i18n/utils'
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<div class="flex flex-col items-center justify-center py-16 px-0 bottom-0 gap-2 text-center text-sm text-slate-300">
+    <span>{t('footer.crafted')}
+        <a href="https://github.com/guinotix" class="group inline-flex items-center hover:text-white hover:underline focus:outline focus:outline-2 focus:rounded-sm focus:outline-violet-500">
             @guinotix
-        </a> with Astro
+        </a>
     </span>
+    <LangPicker />
 </div>

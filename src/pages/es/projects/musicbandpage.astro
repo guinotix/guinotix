@@ -1,0 +1,87 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const description = "Music Band Page (MBP) es una combinación de un blog y una plataforma de comercio electrónico para artistas y bandas musicales. Proporciona una interfaz simple, principalmente basada en tiendas online que he tomado como referencia. Además tiene un panel de administración para gestionar tanto el contenido del blog como los productos que hay disponibles en la tienda.";
+
+const backendFeatures = [
+    "Navegación y búsqueda de productos",
+    "Autenticación de clientes y autorización",
+    "Ver información detallada sobre los pedidos",
+    "Carrito de la compra hecho con un formulario paso a paso",
+    "Conexión con un TPV externo para procesar los pagos",
+    "Notificaciones vía Email para confirmación de pedidos y actualizaciones",
+    "Gestionar productos e información mostrada por el panel de adminstrador",
+];
+
+const frontendFeatures = [
+    "Landing page navegable",
+    "Acceso a la tienda",
+    "Muestra de eventos actuales y pasados",
+    "Esquema básico de colores (rojo y negro)",
+];
+---
+
+<Layout title="Music Band Page | guinotix">
+
+    <section class="max-w-xl mx-auto p-6 bg-opacity-80 rounded-lg text-white">
+        <div class="flex flex-col items-center justify-center text-5xl leading-relaxed">
+            <p>Music Band Page</p><p>🎸🎤</p>
+        </div>
+    </section>
+    
+    <div class="grid grid-cols-1 gap-6 lg:gap-8">
+        <article class="scale-100 p-6 flex flex-col">
+            <h2 class="mt-2 text-lg font-semibold text-white">Descripción</h2>
+            <p class="mt-4 mb-4 leading-relaxed">{description}</p>
+            <h2 class="mt-2 text-lg font-semibold text-white">Características</h2>
+            <div class="mt-4 mb-4 leading-relaxed">
+                <p class="mb-4 text-purple-500 font-bold leading-relaxed">Backend</p>
+                <ul class="list-disc list-inside">
+                    {Array.from({ length: backendFeatures.length }, (_, i) => i + 1).map((number) => (
+                        <li>{backendFeatures[number-1]}</li>
+                    ))}
+                </ul>
+                <p class="mt-4 mb-4 text-purple-500 font-bold leading-relaxed">Frontend</p>
+                <ul class="list-disc list-inside">
+                    {Array.from({ length: frontendFeatures.length }, (_, i) => i + 1).map((number) => (
+                        <li>{frontendFeatures[number-1]}</li>
+                    ))}
+                </ul>
+            </div>
+            <h2 class="mt-4 text-lg font-semibold text-white">Detalles de implementación</h2>
+            <p class="mt-4 mb-2 leading-relaxed">
+                MBP ha sido codificado con el stack <strong>RILT</strong> (React, Inertia.js, Laravel and Tailwind CSS).
+                El panel de administración ha sido desarrollado utilizando <strong>Filament</strong> para la gestión de productos, pedidos y las publicaciones del blog.
+                <strong>SQLite</strong> es empleado para almacenar los datos de la aplicación.
+                <strong>Stripe</strong> maneja todos los pedidos de los clientes y las actualizaciones se hacen concurrentemente con la base de datos para asegurar la integridad de los datos.
+            </p>
+            <p class="mb-4 leading-relaxed">
+                Sobre el diseño gráfico, el esquema de color empleado es el de Laravel por defecto (negro y rojo). De la misma forma, el logo no ha sido cambiado por simplificación.
+            </p>
+            <p class="mb-4 leading-relaxed">
+                En general, el desarrollo fue basado en aprender cómo funciona una aplicación de comercio electrónico desde el lado del servidor.
+            </p>
+        </article>
+
+        <article class="scale-100 p-6 flex flex-col">
+            <h2 class="mt-2 text-lg font-semibold text-white">Resumen</h2>
+            <p class="mt-4 leading-relaxed">
+                Aquí hay algunas imágenes mostrando la interfaz gráfica de la aplicación:
+            </p>
+            <div class="space-y-1 flex flex-col items-center">
+                <img class="scale-90 rounded-2xl" src="/musicbandpage/100.png" alt="Main store page">
+                <img class="scale-90 rounded-2xl" src="/musicbandpage/200.png" alt="Product view">
+                <img class="scale-90 rounded-2xl" src="/musicbandpage/300.png" alt="Shopping cart view">
+                <img class="scale-90 rounded-2xl" src="/musicbandpage/400.png" alt="Shipping method selection">
+                <img class="scale-90 rounded-2xl" src="/musicbandpage/500.png" alt="Order summary">
+                <img class="scale-90 rounded-2xl" src="/musicbandpage/600.png" alt="My orders table">
+                <img class="scale-90 rounded-2xl" src="/musicbandpage/700.png" alt="Order view">
+                <img class="scale-90 rounded-2xl" src="/musicbandpage/800.png" alt="Admin - Products List">
+                <img class="scale-90 rounded-2xl" src="/musicbandpage/900.png" alt="Admin - Orders List">
+                <img class="scale-90 rounded-2xl" src="/musicbandpage/1000.png" alt="Admin - Order View 1">
+                <img class="scale-90 rounded-2xl" src="/musicbandpage/1100.png" alt="Admin - Order View 2">
+            </div>
+        </article>
+    </div>
+    
+</Layout>

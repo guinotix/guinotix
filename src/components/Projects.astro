@@ -1,30 +1,47 @@
 ---
 import Logo from '../components/Logo.astro';
+import { ui, defaultLang } from '../i18n/ui';
 
-const projects = [
+import { getLangFromUrl, useTranslations } from '../i18n/utils'
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+type TranslationKey = keyof typeof ui[typeof defaultLang];
+
+interface Project {
+    name: TranslationKey;
+    info: TranslationKey;
+    link: string;
+    fallback: string;
+    techs: string[];
+    img: string;
+    alt: string;
+}
+
+const projects: Project[] = [
     {
-        name: "1st International Congress of Psychology Students (XVIII CNCEP UV)",
-        info: "My most recent project! This is a landing page for an international charity conference done by the CEP-PIE (Colectivo de Estudiantes de Psicología). The CEP-PIE is the student representative body in which representatives of psychology students from the different centers of the Spanish university system participate, and I am being involved in the Department of Digital Spaces managing everything about the web, and one of the things I am proud of is helping with the building of this site from the foundation.",
-        link: "",
-        fallback: "https://cncep-2025.vercel.app/",
+        name: "index.projects.cncep.title",
+        info: "index.projects.cncep.description",
+        link: "https://cncep-2025.vercel.app/",
+        fallback: "",
         techs: ["React", "Tailwind"],
         img: "/cncep_logo.webp",
-        alt: "CNCEP presentation image"
+        alt: "CNCEP project presentation"
     },
     {
-        name: "Music Band Page",
-        info: "This project is a full-stack web application I developed as a serious challenge. After Sailaway I decided to start one with more ambition for my future as a software developer. Music is one of my hobbies and I spend time looking for some records online so, why not building a project related to this? That's why I came with the idea of building an E-commerce platform powered with some functionalities and styles based on bands that I follow.",
+        name: "index.projects.mbp.title",
+        info: "index.projects.mbp.description",
         link: "",
-        fallback: "/projects/musicbandpage",
+        fallback: "projects/musicbandpage",
         techs: ["Laravel", "Inertia", "React", "Tailwind", "Stripe", "Filament"],
         img: "/mbp_ex_port.png",
         alt: "MBP project presentation"
     },
     {
-        name: "Sailaway",
-        info: "Sailaway is a nearly identical adaptation of my final degree project, which I have done in 2023. Due to implementation reasons of that project, the original one is not visible, and that's why I made a replica as faithful as possible, omitting things like brand image and some special features.",
+        name: "index.projects.sailaway.title",
+        info: "index.projects.sailaway.description",
         link: "",
-        fallback: "/projects/sailaway",
+        fallback: "projects/sailaway",
         techs: ["Laravel", "MySQL", "Tailwind"],
         img: "/sailaway/000.png",
         alt: "Sailaway project presentation"
@@ -37,18 +54,24 @@ const projects = [
         <div class="flex flex-col justify-center items-center">
             <img class="rounded-2xl w-1/4 h-1/4" src={project.img} alt={project.alt}>
             <div class="flex flex-col justify-center items-center">
-                <h2 class="mt-2 text-2xl font-semibold text-white">{project.name}</h2>
-                <p class="mt-4 leading-relaxed mx-8">{project.info}</p>
+                <h2 class="mt-2 text-2xl text-center font-semibold text-white">{t(project.name)}</h2>
+                <p class="mt-4 leading-relaxed mx-8">{t(project.info)}</p>
             </div>
             <p class="mt-4 leading-relaxed">
                 <button class="inline-flex items-center px-4 py-2 bg-violet-800 border border-transparent rounded-md font-semibold text-base text-white uppercase tracking-widest hover:bg-violet-700 focus:bg-violet-700 active:bg-violet-900 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition ease-in-out duration-150 hover:outline hover:outline-2 hover:outline-violet-500">
-                    <a href={project.fallback}>
-                        More info...
-                    </a>
+                    { project.link ? (
+                        <a href={project.link} target="_blank">
+                            {t('index.projects.moreinfo')}
+                        </a>
+                    ) : (
+                        <a href={`/${lang}/` + project.fallback}>
+                            {t('index.projects.moreinfo')}
+                        </a>
+                    )}
                 </button>
             </p>
             <div class="mt-4 text-center">
-                <p class="font-medium text-white">Technologies used:</p>
+                <p class="font-medium text-white">{t('index.projects.techs')}</p>
                 <div class="flex flex-row place-content-center space-x-2">
                     {project.techs.map((tech) => (
                         <Logo name={tech} />
