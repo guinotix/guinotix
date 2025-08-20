@@ -14,7 +14,7 @@ import LogoWordpress from './logos/LogoWordpress.astro';
 
 const { name, ...props } = Astro.props;
 
-const icons = {
+const logos = {
     express: LogoExpress,
     inertia: LogoInertia,
     laravel: LogoLaravel,
@@ -29,7 +29,7 @@ const icons = {
     wordpress: LogoWordpress,
 };
 
-const SelectedIcon = icons[name.toLowerCase()];
+const SelectedLogo = logos[name.toLowerCase()];
 ---
 
-{SelectedIcon ? <SelectedIcon {...props} /> : null}
+{SelectedLogo ? <SelectedLogo {...props} /> : null}

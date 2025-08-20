@@ -1,0 +1,17 @@
+---
+import GithubIcon from './icons/GithubIcon.astro';
+import LinkedInIcon from './icons/LinkedInIcon.astro';
+import MailIcon from './icons/MailIcon.astro';
+
+const { name, ...props } = Astro.props;
+
+const icons = {
+    github: GithubIcon,
+    linkedin: LinkedInIcon,
+    mail: MailIcon,
+};
+
+const SelectedIcon = icons[name.toLowerCase()];
+---
+
+{SelectedIcon ? <SelectedIcon {...props} /> : null}

@@ -1,0 +1,28 @@
+---
+import Icon from './Icon.astro';
+
+const name = ["<Alejandro", "Guinot />"];
+const role = "Junior Software Engineer";
+
+const contact = [
+    { via: "mail", link: "mailto:guinotix.dev@gmail.com" },
+    { via: "github", link: "https://github.com/guinotix" },
+    { via: "linkedin", link: "https://www.linkedin.com/in/guinotix-dev" },
+];
+---
+<div class="grid grid-cols-1 sm:grid-cols-2 place-items-center justify-center min-h-screen">
+    <div class="flex flex-col items-center justify-center my-12 p-2">
+	    <div class="text-4xl sm:text-5xl font-semibold">{name[0]}<br>{name[1]}</div>
+	    <p class="py-3">{role}</p>
+	    <div class="space-x-6">
+            {contact.map((c) => (
+                <a aria-label={c.via} href={c.link} target="_blank" class="group inline-flex items-center hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-violet-500">
+	    	        <Icon name={c.via} />
+	    	    </a>
+            ))}
+	    </div>
+    </div>
+    <section class="p-6">
+        <img src="/face.webp" alt="profile" class="block w-72 h-72 rounded-2xl">
+    </section>
+</div>

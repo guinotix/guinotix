@@ -1,0 +1,24 @@
+---
+import CardTech from './CardTech.astro';
+import Logo from './Logo.astro';
+
+const myTechs = [
+    { name: "Laravel", isMain: true },
+    { name: "Inertia", isMain: true },
+    { name: "React", isMain: true },
+    { name: "PHP", isMain: true },
+    { name: "Tailwind", isMain: true },
+    { name: "Javascript", isMain: false },
+    { name: "MySQL", isMain: false },
+    { name: "Wordpress", isMain: false },
+    { name: "Express", isMain: false },
+    { name: "Python", isMain: false },
+];
+---
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 mt-4">
+    {myTechs.map((tech) => (
+        <CardTech technology={tech.name} main={tech.isMain}>
+            <Logo name={tech.name} />
+        </CardTech>
+    ))}
+</div>
