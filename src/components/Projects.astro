@@ -1,5 +1,6 @@
 ---
 import Logo from '../components/Logo.astro';
+import Tooltip from './Tooltip.astro';
 import { ui, defaultLang } from '../i18n/ui';
 
 import { getLangFromUrl, useTranslations } from '../i18n/utils'
@@ -74,7 +75,9 @@ const projects: Project[] = [
                 <p class="font-medium text-white">{t('index.projects.techs')}</p>
                 <div class="flex flex-row place-content-center space-x-2">
                     {project.techs.map((tech) => (
-                        <Logo name={tech} />
+                        <Tooltip label={tech}>
+                            <Logo name={tech} />
+                        </Tooltip>
                     ))}
                 </div>
             </div>
