@@ -1,0 +1,60 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+import { getLangFromUrl, useTranslations } from '../../i18n/utils'
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout title="Services | guinotix">
+
+	<section class="max-w-6xl mx-auto p-8 space-y-16 mt-16">
+        <div class="text-sm leading-relaxed space-y-4">
+            <h1 class="text-2xl font-semibold text-white">{'Terms of Service'}</h1>
+            <p>Welcome to my portfolio! If you hire my services, you can contact me via email at this address 
+                <a href="mailto:guinotix.dev@gmail.com" class="hover:underline hover:text-purple-500 duration-300 transition-colors">guinotix.dev@gmail.com</a>.
+                I strongly recommend reviewing the following terms and conditions beforehand. Contracting my services assumes that the client has read and accepted them.</p>
+        </div>
+        <div class="text-sm leading-relaxed space-y-16">
+            <div class="space-y-4">
+                <h2 class="text-lg font-semibold text-white">What services do I offer?</h2>
+                <ul class="list-disc list-inside space-y-4">
+                    <li>Web development (mainly landing pages and E-commerce platforms)</li>
+                    <li>API development</li>
+                    <li>Consulting and advising on web development</li>
+                </ul>
+                <p class="mt-2">The details, scope, and price of each service will be established in a specific proposal or contract with each client.</p>
+            </div>
+            <div class="space-y-4">
+                <h2 class="text-lg font-semibold text-white">Deliveries, responsibilities and confidentiality</h2>
+                <ul class="list-disc list-inside space-y-4">
+                    <li>Delivery dates will be previously agreed upon with the client and may vary in the future depending on the complexity of the project.</li>
+                    <li>The client will be responsible for providing all information, text, images, and materials necessary for the development of the project.</li>
+                    <li>After the final delivery of the project, I am not responsible for any external modifications made by third parties without my authorization.</li>
+                    <li>Any mishap that may occur in external services (hosting, domains, plugins...) is excluded from my responsibility.</li>
+                    <li>All information shared by the client will be treated as confidential and will not be disclosed to third parties without prior consent.</li>
+                </ul>
+            </div>
+            <div class="space-y-4">
+                <h2 class="text-lg font-semibold text-white">Intellectual property</h2>
+                <ul class="list-disc list-inside space-y-4">
+                    <li>The client retains the rights to its own content (texts, images, logos...)</li>
+                </ul>
+            </div>
+            <div class="space-y-4">
+                <h2 class="text-lg font-semibold text-white">Payment terms, cancellations and refunds</h2>
+                <ul class="list-disc list-inside space-y-4">
+                    <li>For custom projects, unless otherwise agreed, a 50% advance payment is required at the start, and the remaining 50% before final delivery.</li>
+                    <li>The initial advance payment is non-refundable unless canceled by myself.</li>
+                    <li>If the client decides to cancel the project once it has started, they will be required to pay a proportional amount for the work completed at that time.</li>
+                    <li>Payments are made through the Stripe platform.</li>
+                </ul>
+            </div>
+            <div class="space-y-4">
+                <h2 class="text-lg font-semibold text-white">Applicable legislation</h2>
+                <p>These terms are governed by the laws of Spain. Any dispute will be resolved in the courts of Spain.</p>
+            </div>
+        </div>
+    </section>
+	
+</Layout>

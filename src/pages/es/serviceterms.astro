@@ -1,0 +1,60 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+import { getLangFromUrl, useTranslations } from '../../i18n/utils'
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout title="Servicios | guinotix">
+
+	<section class="max-w-6xl mx-auto p-8 space-y-16 mt-16">
+        <div class="text-sm leading-relaxed space-y-4">
+            <h1 class="text-2xl font-semibold text-white">{'Términos de Servicio'}</h1>
+            <p>¡Bienvenido/a a mi portfolio! En caso de contratar mis servicios, puedes contactar conmigo vía correo electrónico a 
+                <a href="mailto:guinotix.dev@gmail.com" class="hover:underline hover:text-purple-500 duration-300 transition-colors">guinotix.dev@gmail.com</a>.
+                Antes recomiendo encarecidamente echar un vistazo a los siguientes términos y condiciones. La contratación de mis servicios asume que el cliente los ha leído y aceptado.</p>
+        </div>
+        <div class="text-sm leading-relaxed space-y-16">
+            <div class="space-y-4">
+                <h2 class="text-lg font-semibold text-white">¿Qué servicios ofrezco?</h2>
+                <ul class="list-disc list-inside space-y-4">
+                    <li>Desarrollo de sitios web (principalmente landing page y plataformas de comercio electrónico)</li>
+                    <li>Desarrollo de APIs</li>
+                    <li>Consultoría y asesoría en desarrollo web</li>
+                </ul>
+                <p class="mt-2">Los detalles, el alcance y el precio de cada servicio se establecerá en una propuesta o contrato específico con cada cliente.</p>
+            </div>
+            <div class="space-y-4">
+                <h2 class="text-lg font-semibold text-white">Entregas, responsabilidades y confidencialidad</h2>
+                <ul class="list-disc list-inside space-y-4">
+                    <li>Las fechas de entrega serán acordadas previamente con el cliente y podrán variar en un futuro dependiendo de la complejidad del proyecto</li>
+                    <li>El cliente será responsable de proporcionar tanto información, textos, imágenes y materiales necesarios para el desarrollo del proyecto</li>
+                    <li>Tras la entrega final del proyecto, no me hago responsable de modificaciones externas realizadas por terceros sin mi autorización</li>
+                    <li>Cualquier percance que pueda ocurrir en los servicios derivados externos (hosting, dominios, plugins, etc.) quedan excluídos de mi responsabilidad</li>
+                    <li>Toda información compartida por el cliente será tratada como confidencial y no se divulgará a terceros sin consentimiento previo</li>
+                </ul>
+            </div>
+            <div class="space-y-4">
+                <h2 class="text-lg font-semibold text-white">Propiedad intelectual</h2>
+                <ul class="list-disc list-inside space-y-4">
+                    <li>El cliente mantiene los derechos sobre los contenidos propios (textos, imágenes, logotipos, etc.)</li>
+                </ul>
+            </div>
+            <div class="space-y-4">
+                <h2 class="text-lg font-semibold text-white">Condiciones de pago, cancelaciones y reembolsos</h2>
+                <ul class="list-disc list-inside space-y-4">
+                    <li>Para proyectos hechos a medida, salvo acuerdo diferente, se solicita un pago anticipado del 50% al inicio y el 50% restante antes de la entrega final</li>
+                    <li>El pago anticipado inicial no es reembolsable, salvo cancelación por mi parte</li>
+                    <li>En caso de que el cliente decida cancelar el proyecto una vez iniciado, deberá abonar la parte proporcional al trabajo realizado en ese momento</li>
+                    <li>Los pagos se realizan mediante la plataforma Stripe</li>
+                </ul>
+            </div>
+            <div class="space-y-4">
+                <h2 class="text-lg font-semibold text-white">Legislación aplicable</h2>
+                <p>Estos términos se rigen por las leyes de España. Cualquier controversia será resuelta en los tribunales de España.</p>
+            </div>
+        </div>
+    </section>
+	
+</Layout>
