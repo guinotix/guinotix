@@ -1,5 +1,6 @@
 ---
 import '@fontsource-variable/reddit-mono'
+import Analytics from '@vercel/analytics/astro'
 
 import Footer from '../components/Footer.astro';
 import Navbar from '../components/Navbar.astro';
@@ -21,6 +22,7 @@ const lang = getLangFromUrl(Astro.url);
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg" href="/codeIcon.svg" />
 		<title>{title}</title>
+		<Analytics />
 	</head>
 	<body class="font-sans antialiased">
 		<div class="min-h-screen bg-gradient-to-r from-[#1d043c] from-10% via-[#3c156e] via-30% to-[#451e4a] to-90% text-slate-100">
