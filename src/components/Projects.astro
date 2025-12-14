@@ -21,6 +21,15 @@ interface Project {
 
 const projects: Project[] = [
     {
+        name: "index.projects.vswiss.title",
+        info: "index.projects.vswiss.description",
+        link: "",
+        fallback: "",
+        techs: ["Laravel", "Inertia", "React", "Tailwind"],
+        img: "/vswiss_main.png",
+        alt: "vswiss project presentation"
+    },
+    {
         name: "index.projects.cncep.title",
         info: "index.projects.cncep.description",
         link: "https://cncep-2025.vercel.app/",
@@ -49,27 +58,31 @@ const projects: Project[] = [
     },
 ]
 ---
-<div class="mt-4 grid grid-cols-1 items-start gap-6 space-y-16">
+<div class="mt-16 grid grid-cols-1 items-start gap-6 space-y-16">
 
     {projects.map((project) => (
         <div class="flex flex-col justify-center items-center">
-            <img class="rounded-2xl w-1/4 h-1/4" src={project.img} alt={project.alt}>
+            <img class="rounded-2xl w-5/6 h-5/6 md:w-1/3 md:h-1/3" src={project.img} alt={project.alt}>
             <div class="flex flex-col justify-center items-center">
                 <h2 class="mt-2 text-2xl text-center font-semibold text-white">{t(project.name)}</h2>
                 <p class="mt-4 leading-relaxed mx-8">{t(project.info)}</p>
             </div>
             <p class="mt-4 leading-relaxed">
-                <button class="inline-flex items-center px-4 py-2 bg-violet-800 border border-transparent rounded-md font-semibold text-base text-white uppercase tracking-widest hover:bg-violet-700 focus:bg-violet-700 active:bg-violet-900 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition ease-in-out duration-150 hover:outline hover:outline-2 hover:outline-violet-500">
-                    { project.link ? (
+                { project.link ? (
+                    <button class="inline-flex items-center px-4 py-2 bg-violet-800 border border-transparent rounded-md font-semibold text-base text-white uppercase tracking-widest hover:bg-violet-700 focus:bg-violet-700 active:bg-violet-900 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition ease-in-out duration-150 hover:outline hover:outline-2 hover:outline-violet-500">
                         <a href={project.link} target="_blank">
                             {t('index.projects.moreinfo')}
                         </a>
-                    ) : (
+                    </button>
+                ) : project.fallback ? (
+                    <button class="inline-flex items-center px-4 py-2 bg-violet-800 border border-transparent rounded-md font-semibold text-base text-white uppercase tracking-widest hover:bg-violet-700 focus:bg-violet-700 active:bg-violet-900 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition ease-in-out duration-150 hover:outline hover:outline-2 hover:outline-violet-500">
                         <a href={`/${lang}/` + project.fallback}>
                             {t('index.projects.moreinfo')}
                         </a>
-                    )}
-                </button>
+                    </button>
+                ) : (
+                    <></>
+                )}
             </p>
             <div class="mt-4 text-center">
                 <p class="font-medium text-white">{t('index.projects.techs')}</p>
