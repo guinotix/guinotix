@@ -1,0 +1,35 @@
+---
+import LogoExpress from '@/components/logos/LogoExpress.astro';
+import LogoInertia from '@/components/logos/LogoInertia.astro';
+import LogoLaravel from '@/components/logos/LogoLaravel.astro';
+import LogoMySQL from '@/components/logos/LogoMySQL.astro';
+import LogoReact from '@/components/logos/LogoReact.astro';
+import LogoTailwind from '@/components/logos/LogoTailwind.astro';
+import LogoStripe from '@/components/logos/LogoStripe.astro';
+import LogoFilament from '@/components/logos/LogoFilament.astro';
+import LogoPHP from '@/components/logos/LogoPHP.astro';
+import LogoPython from '@/components/logos/LogoPython.astro';
+import LogoJavascript from '@/components/logos/LogoJavascript.astro';
+import LogoWordpress from '@/components/logos/LogoWordpress.astro';
+
+const { name, ...props } = Astro.props;
+
+const logos = {
+    express: LogoExpress,
+    inertia: LogoInertia,
+    laravel: LogoLaravel,
+    mysql: LogoMySQL,
+    react: LogoReact,
+    tailwind: LogoTailwind,
+    stripe: LogoStripe,
+    filament: LogoFilament,
+    php: LogoPHP,
+    python: LogoPython,
+    javascript: LogoJavascript,
+    wordpress: LogoWordpress,
+};
+
+const SelectedLogo = logos[name.toLowerCase()];
+---
+
+{SelectedLogo ? <SelectedLogo {...props} /> : null}

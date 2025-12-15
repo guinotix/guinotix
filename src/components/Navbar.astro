@@ -1,9 +1,9 @@
 ---
-import NavLink from '../components/NavLink.astro';
-import ResponsiveNavLink from '../components/ResponsiveNavLink.astro';
+import NavLink from '@/components/ui/NavLink.astro';
+import ResponsiveNavLink from '@/components/ui/ResponsiveNavLink.astro';
 
-import { getLangFromUrl, useTranslations } from '../i18n/utils'
-import LangPicker from './LangPicker.astro';
+import { getLangFromUrl, useTranslations } from '@/i18n/utils'
+import LangPicker from '@/components/ui/LangPicker.astro';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);

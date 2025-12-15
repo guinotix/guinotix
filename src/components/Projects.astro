@@ -1,9 +1,9 @@
 ---
-import Logo from '../components/Logo.astro';
-import Tooltip from './Tooltip.astro';
-import { ui, defaultLang } from '../i18n/ui';
+import Logo from '@/components/ui/Logo.astro';
+import Tooltip from '@/components/ui/Tooltip.astro';
+import { ui, defaultLang } from '@/i18n/ui';
 
-import { getLangFromUrl, useTranslations } from '../i18n/utils'
+import { getLangFromUrl, useTranslations } from '@/i18n/utils'
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
