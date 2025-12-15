@@ -7,12 +7,22 @@ const langClasses = {
     'en': 'fi fi-gb',
     'es': 'fi fi-es',
 }
+
+const pathname = Astro.url.pathname;
+
+const langs = Object.keys(languages).join('|');
+
+const pathWithoutLang = pathname.replace(
+    new RegExp(`^/(${langs})(/|$)`), '/'
+);
 ---
 
 <ul class="flex gap-4">
-    {Object.entries(languages).map(([lang, label]) => (
+    {Object.keys(languages).map((lang) => (
         <li>
-            <a href={`/${lang}`} aria-label={lang}>
+            <a href={`/${lang}${pathWithoutLang == '/' ? '' : pathWithoutLang}`}
+                aria-label={lang}
+            >
                 <span class={langClasses[lang]}></span>
             </a>
         </li>
