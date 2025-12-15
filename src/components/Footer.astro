@@ -1,6 +1,4 @@
 ---
-import LangPicker from "./LangPicker.astro"
-
 import { getLangFromUrl, useTranslations } from '../i18n/utils'
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -12,5 +10,4 @@ const t = useTranslations(lang);
             @guinotix
         </a>
     </span>
-    <LangPicker />
 </div>
