@@ -1,37 +1,41 @@
 ---
-const statusCollection = {
+import { getLangFromUrl, useTranslations } from '@/i18n/utils'
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+export const statusCollection = {
     available: {
-        label: "Disponible",
+        label: "status.available" as const,
         bg: "bg-violet-600",
         text: "text-slate-50",
         gradient: "bg-[conic-gradient(from_90deg_at_50%_50%,#0d9488_0%,#ede9fe_50%,#0d9488_100%)]",
     },
     freelance: {
-        label: "Freelance",
+        label: "status.freelance" as const,
         bg: "bg-purple-600",
         text: "text-slate-50",
         gradient: "bg-[conic-gradient(from_90deg_at_50%_50%,#0284c7_0%,#ede9fe_50%,#0284c7_100%)]",
     },
     exploring: {
-        label: "Explorando",
+        label: "status.exploring" as const,
         bg: "bg-purple-500",
         text: "text-slate",
         gradient: "bg-[conic-gradient(from_90deg_at_50%_50%,#65a30d_0%,#ede9fe_50%,#65a30d_100%)]",
     },
     consulting: {
-        label: "Asesoría",
+        label: "status.consulting" as const,
         bg: "bg-violet-400",
         text: "text-slate-950",
         gradient: "bg-[conic-gradient(from_90deg_at_50%_50%,#ca8a04_0%,#ede9fe_50%,#ca8a04_100%)]",
     },
     partial: {
-        label: "Parcialmente",
+        label: "status.partial" as const,
         bg: "bg-purple-300",
         text: "text-violet-800",
         gradient: "bg-[conic-gradient(from_90deg_at_50%_50%,#d97706_0%,#ede9fe_50%,#d97706_100%)]",
     },
     unavailable: {
-        label: "No disponible",
+        label: "status.unavailable" as const,
         bg: "bg-indigo-100",
         text: "text-violet-800",
         gradient: "bg-[conic-gradient(from_90deg_at_50%_50%,#f43f5e_0%,#ede9fe_50%,#f43f5e_100%)]",
@@ -52,7 +56,7 @@ const status = statusCollection[currentStatus];
         <span class="relative inline-flex overflow-hidden rounded-full p-[2px]">
             <span class={`absolute inset-[-1000%] animate-[spin_2s_linear_infinite] ${status.gradient}`}></span>
             <div class={`inline-flex items-center justify-center w-full px-4 py-1 text-base ${status.bg} ${status.text} rounded-full cursor-pointer backdrop-blur-3xl whitespace-nowrap`}>
-                {status.label}
+                {t(status.label)}
             </div>
         </span>
     </div>

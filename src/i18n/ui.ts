@@ -7,6 +7,12 @@ export const defaultLang = 'es';
 
 export const ui = {
 	en: {
+		'status.available': 'Available',
+		'status.freelance': 'Freelance',
+		'status.exploring': 'Exploring',
+		'status.consulting': 'Consulting',
+		'status.partial': 'Partially available',
+		'status.unavailable': 'Unavailable',
 		'nav.home': 'Home',
 		'nav.about': 'About',
 		'nav.technologies': 'Techonologies',
@@ -31,6 +37,12 @@ export const ui = {
 		'index.projects.sailaway.description': "Sailaway is a nearly identical adaptation of my final degree project, which I have done in 2023. Due to implementation reasons of that project, the original one is not visible, and that's why I made a replica as faithful as possible, omitting things like brand image and some special features."
 	},
 	es: {
+		'status.available': 'Disponible',
+		'status.freelance': 'Freelance',
+		'status.exploring': 'Explorando',
+		'status.consulting': 'Asesoría',
+		'status.partial': 'Disponibilidad parcial',
+		'status.unavailable': 'No disponible',
 		'nav.home': 'Inicio',
 		'nav.about': 'Sobre mí',
 		'nav.technologies': 'Tecnologías',
