@@ -1,5 +1,6 @@
 ---
 import Icon from '@/components/ui/Icon.astro';
+import AvailabilityBadge from '@/components/ui/AvailabilityBadge.astro';
 
 const name = ["<Alejandro", "Guinot />"];
 const role = "Junior Software Engineer";
@@ -21,6 +22,7 @@ const contact = [
 	    	    </a>
             ))}
 	    </div>
+        <AvailabilityBadge currentStatus={'available'} />
     </div>
     <section class="p-6">
         <img src="/face.webp" alt="profile" class="block w-72 h-72 rounded-2xl -rotate-6">
