@@ -25,17 +25,15 @@ const lang = getLangFromUrl(Astro.url);
 		<Analytics />
 	</head>
 	<body class="font-sans antialiased">
-		<div class="min-h-screen bg-gradient-to-r from-[#1d043c] from-10% via-[#3c156e] via-30% to-[#451e4a] to-90% text-slate-100">
+		<main class="bg-gradient-to-r from-[#1d043c] from-10% via-[#3c156e] via-30% to-[#451e4a] to-90% text-slate-100">
 			<Navbar />
-			<main>
-				<div class="relative min-h-screen sm:flex sm:flex-col sm:justify-center sm:items-center selection:bg-violet-500 selection:text-white">
-					<div class="max-w-5xl mx-auto">
-						<slot />
-					</div>
+			<div class="relative min-h-screen sm:flex sm:flex-col sm:justify-center sm:items-center selection:bg-violet-500 selection:text-white">
+				<div class="max-w-5xl mx-auto">
+					<slot />
 				</div>
-				<Footer />
-			</main>
-		</div>
+			</div>
+			<Footer />
+		</main>
 	</body>
 </html>
 <style is:global>
