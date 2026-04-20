@@ -1,5 +1,7 @@
 ---
-import '@fontsource-variable/reddit-mono'
+import "@/styles/global.css";
+
+import { Font } from "astro:assets";
 import Analytics from '@vercel/analytics/astro'
 
 import Footer from '@/components/Footer.astro';
@@ -23,8 +25,9 @@ const lang = getLangFromUrl(Astro.url);
 		<link rel="icon" type="image/svg" href="/codeIcon.svg" />
 		<title>{title}</title>
 		<Analytics />
+		<Font cssVariable="--font-reddit" />
 	</head>
-	<body class="font-sans antialiased">
+	<body class="font-mono antialiased">
 		<main class="bg-gradient-to-r from-[#1d043c] from-10% via-[#3c156e] via-30% to-[#451e4a] to-90% text-slate-100">
 			<Navbar />
 			<div class="relative min-h-screen sm:flex sm:flex-col sm:justify-center sm:items-center selection:bg-violet-500 selection:text-white">
