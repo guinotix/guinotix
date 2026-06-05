@@ -3,22 +3,22 @@ import "flag-icons/css/flag-icons.min.css";
 
 import { languages } from '@/i18n/ui';
 
+type Lang = keyof typeof languages;
+
 const langClasses = {
     'en': 'fi fi-gb',
     'es': 'fi fi-es',
 }
 
-const pathname = Astro.url.pathname;
-
 const langs = Object.keys(languages).join('|');
 
-const pathWithoutLang = pathname.replace(
+const pathWithoutLang = Astro.url.pathname.replace(
     new RegExp(`^/(${langs})(/|$)`), '/'
 );
 ---
 
 <ul class="flex gap-4">
-    {Object.keys(languages).map((lang) => (
+    {(Object.keys(languages) as Lang[]).map((lang) => (
         <li>
             <a href={`/${lang}${pathWithoutLang == '/' ? '' : pathWithoutLang}`}
                 aria-label={lang}
