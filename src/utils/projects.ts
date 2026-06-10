@@ -2,6 +2,16 @@ import type { Project } from '@/types/project';
 
 export const projects: Project[] = [
     {
+        name: "index.projects.psiconews.title",
+        info: "index.projects.psiconews.description",
+        link: "https://psiconews.vercel.app/",
+        fallback: "",
+        techs: ["Astro", "Tailwind"],
+        img: "/psiconews_main.webp",
+        logo: "",
+        alt: "psiconews project presentation"
+    },
+    {
         name: "index.projects.vswiss.title",
         info: "index.projects.vswiss.description",
         link: "",

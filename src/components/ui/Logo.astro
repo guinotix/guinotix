@@ -11,6 +11,7 @@ import LogoPHP from '@/components/logos/LogoPHP.astro';
 import LogoPython from '@/components/logos/LogoPython.astro';
 import LogoJavascript from '@/components/logos/LogoJavascript.astro';
 import LogoWordpress from '@/components/logos/LogoWordpress.astro';
+import LogoAstro from '@/components/logos/LogoAstro.astro';
 
 const { name, ...props } = Astro.props;
 
@@ -27,6 +28,7 @@ const logos = {
     python: LogoPython,
     javascript: LogoJavascript,
     wordpress: LogoWordpress,
+    astro: LogoAstro,
 };
 
 const SelectedLogo = logos[name.toLowerCase()];
