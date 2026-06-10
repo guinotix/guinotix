@@ -21,9 +21,18 @@ const t = useTranslations(lang);
                 <p class="mt-4 leading-relaxed mx-8">{t(project.info)}</p>
             </div>
             <div class="mt-4 leading-relaxed">
-                <ProjectInfoButton project={project}>
-                    {t('index.projects.moreinfo')}
-                </ProjectInfoButton>
+                <div class="flex flex-row items-center space-x-2">
+                    {project.link &&
+                        <ProjectInfoButton project={project}>
+                            {t('index.projects.visit')}
+                        </ProjectInfoButton>
+                    }
+                    {project.fallback &&
+                        <ProjectInfoButton project={project}>
+                            {t('index.projects.moreinfo')}
+                        </ProjectInfoButton>
+                    }
+                </div>
             </div>
             <div class="mt-4 text-center">
                 <p class="font-medium text-white">{t('index.projects.techs')}</p>
