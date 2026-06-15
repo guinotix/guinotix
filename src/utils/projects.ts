@@ -4,7 +4,7 @@ export const projects: Project[] = [
     {
         name: "index.projects.psiconews.title",
         info: "index.projects.psiconews.description",
-        link: "https://psiconews.vercel.app/",
+        link: "https://psiconews.es/",
         fallback: "",
         techs: ["Astro", "Tailwind"],
         img: "/psiconews_main.webp",
