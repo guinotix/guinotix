@@ -42,6 +42,12 @@
   --font-case-sans: ui-sans-serif, system-ui, "Segoe UI", Roboto, Arial, sans-serif;
 }
 
+.case-theme-sea {
+  --color-case-accent: #0284c7;                 /* sky-600 */
+  --color-case-accent-text: #7dd3fc;            /* sky-300 */
+  --color-case-accent-soft: rgb(2 132 199 / 0.18);
+}
+
 @layer base {
   .case-study {
     font-family: var(--font-case-sans);

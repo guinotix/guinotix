@@ -1,0 +1,94 @@
+---
+import CaseHero from '@/components/case/CaseHero.astro';
+import CaseSection from '@/components/case/CaseSection.astro';
+import Card from '@/components/case/Card.astro';
+import KpiCard from '@/components/case/KpiCard.astro';
+import CaseFigure from '@/components/case/CaseFigure.astro';
+
+import { sailawayCopy } from '@/i18n/sailaway';
+
+interface Props {
+    lang: 'es' | 'en';
+}
+
+const { lang } = Astro.props;
+const c = sailawayCopy[lang];
+
+const td = "py-2 pr-4 border-b border-case-line align-top";
+---
+
+<article class="case-study case-theme-sea w-full max-w-3xl mx-auto px-4 sm:px-0 pb-16 text-left">
+
+    <CaseHero eyebrow={c.eyebrow} title={c.title} lead={c.lead}>
+        {c.chips.map((chip) => (
+            <span class="rounded-full bg-case-accent-soft px-3 py-1 text-xs font-semibold text-case-accent-text">{chip}</span>
+        ))}
+    </CaseHero>
+
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+        {c.kpis.map((k) => <KpiCard value={k.value} label={k.label} />)}
+    </div>
+
+    <!-- 01 · Contexto -->
+    <CaseSection id="contexto" eyebrow={c.context.eyebrow} title={c.context.title}>
+        <p>{c.context.body}</p>
+    </CaseSection>
+
+    <!-- 02 · Descripción -->
+    <CaseSection id="descripcion" eyebrow={c.description.eyebrow} title={c.description.title}>
+        <p>{c.description.body}</p>
+    </CaseSection>
+
+    <!-- 03 · Funcionalidades -->
+    <CaseSection id="funcionalidades" eyebrow={c.features.eyebrow} title={c.features.title}>
+        <ul class="grid gap-3 sm:grid-cols-2">
+            {c.features.items.map((f, i) => (
+                <li class="flex gap-3 rounded-xl border border-case-line bg-case-surface p-4 text-sm">
+                    <span class="font-mono text-case-accent-text">{String(i + 1).padStart(2, '0')}</span>
+                    <span>{f}</span>
+                </li>
+            ))}
+        </ul>
+    </CaseSection>
+
+    <!-- 04 · Stack -->
+    <CaseSection id="stack" eyebrow={c.stack.eyebrow} title={c.stack.title}>
+        <p>{c.stack.body}</p>
+
+        <div class="grid gap-3 md:grid-cols-2">
+            <Card>
+                <table class="w-full text-sm">
+                    <tbody>
+                        {c.stack.table.map(([k, v]) => (
+                            <tr><td class={`${td} font-semibold text-white whitespace-nowrap`}>{k}</td><td class={td}>{v}</td></tr>
+                        ))}
+                    </tbody>
+                </table>
+            </Card>
+            <Card title={c.stack.laravelTitle}>
+                <ul class="list-disc pl-5 space-y-1.5 text-sm text-case-muted">
+                    {c.stack.laravel.map((l) => <li>{l}</li>)}
+                </ul>
+            </Card>
+        </div>
+
+        <div class="grid gap-3 md:grid-cols-2">
+            <Card title={c.stack.testingTitle}><p class="text-sm text-case-muted">{c.stack.testing}</p></Card>
+            <Card title={c.stack.designTitle}><p class="text-sm text-case-muted">{c.stack.design}</p></Card>
+        </div>
+    </CaseSection>
+
+    <!-- 05 · Pantallas -->
+    <CaseSection id="pantallas" eyebrow={c.screens.eyebrow} title={c.screens.title}>
+        <div class="grid gap-8">
+            {c.screens.items.map((s) => <CaseFigure src={s.src} alt={s.alt} caption={s.caption} />)}
+        </div>
+    </CaseSection>
+
+    <!-- 06 · Estado -->
+    <CaseSection id="estado" eyebrow={c.status.eyebrow} title={c.status.title}>
+        <p class="text-sm text-case-muted">{c.status.body}</p>
+        <a href={`/${lang}#projects`} class="inline-flex text-sm text-case-accent-text hover:underline">← {c.footer}</a>
+    </CaseSection>
+
+</article>
