@@ -1,0 +1,53 @@
+---
+interface Props {
+    src: string;
+    alt: string;
+    caption: string;
+    note?: string;
+}
+
+const { src, alt, caption, note = "" } = Astro.props;
+---
+
+<figure class="space-y-2 min-w-0">
+    <div class="relative min-h-40 overflow-hidden rounded-xl border border-case-line bg-case-surface">
+        <button type="button" data-case-zoom class="relative block w-full cursor-zoom-in" aria-label={`Ampliar: ${alt}`}>
+            <img
+                src={src}
+                alt={alt}
+                loading="lazy"
+                class="block h-auto w-full"
+                onerror="this.remove()"
+            />
+        </button>
+    </div>
+    <figcaption class="text-xs text-case-muted">
+        {caption} <span class="text-case-accent-text">· clic para ampliar</span>
+        {note && <span class="mt-1 block italic">{note}</span>}
+    </figcaption>
+
+    <dialog data-case-dialog class="m-auto max-h-[92vh] max-w-[95vw] bg-transparent p-0 backdrop:bg-black/85">
+        <img src={src} alt={alt} class="block max-h-[90vh] max-w-[95vw] w-auto h-auto rounded-lg" />
+        <button type="button" data-case-close class="absolute right-2 top-2 rounded-full bg-black/70 px-3 py-1 font-mono text-sm text-white hover:bg-black" aria-label="Cerrar">✕</button>
+    </dialog>
+</figure>
+
+<script>
+    document.querySelectorAll<HTMLButtonElement>('[data-case-zoom]').forEach((btn) => {
+        const figure = btn.closest('figure');
+        const dialog = figure?.querySelector<HTMLDialogElement>('[data-case-dialog]');
+        const img = btn.querySelector('img');
+        if (!dialog || !img) return;
+
+        btn.addEventListener('click', () => {
+            if (!img.complete || img.naturalWidth === 0) return;
+            dialog.showModal();
+        });
+
+        dialog.addEventListener('click', (e) => {
+            if (e.target === dialog || (e.target as HTMLElement).closest('[data-case-close]')) {
+                dialog.close();
+            }
+        });
+    });
+</script>

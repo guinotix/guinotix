@@ -15,10 +15,10 @@ export const projects: Project[] = [
         name: "index.projects.vswiss.title",
         info: "index.projects.vswiss.description",
         link: "",
-        fallback: "",
+        fallback: "projects/vswiss",
         techs: ["Laravel", "Inertia", "React", "Tailwind"],
-        img: "/vswiss_main.png",
-        logo: "",
+        img: "",
+        logo: "/vswiss_logo.png",
         alt: "vswiss project presentation"
     },
     {

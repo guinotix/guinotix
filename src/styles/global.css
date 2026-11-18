@@ -3,3 +3,61 @@
 @theme inline {
   --font-mono: var(--font-reddit);
 }
+
+/*
+  Tokens del caso de estudio (opción B: portfolio + acento editorial).
+  Base y acentos vienen de la paleta del portfolio (violetas/morados).
+  Colores de estado y datos se usan solo donde hacen falta.
+*/
+@theme {
+  /* Texto */
+  --color-case-ink: #f1f5f9;      /* slate-100 */
+  --color-case-muted: #cbd5e1;    /* slate-300 */
+  --color-case-eyebrow: #c4b5fd;  /* violet-300 */
+
+  /* Superficies y líneas (blanco translúcido sobre el degradado morado) */
+  --color-case-surface: rgb(255 255 255 / 0.05);
+  --color-case-surface-strong: rgb(255 255 255 / 0.09);
+  --color-case-line: rgb(255 255 255 / 0.12);
+
+  /* Acento por defecto (puede sobreescribirse por proyecto con --case-accent) */
+  --color-case-accent: #7c3aed;       /* violet-600: fondos de botones y tags */
+  --color-case-accent-text: #a78bfa;  /* violet-400: texto e iconos sobre fondo oscuro */
+  --color-case-accent-soft: rgb(139 92 246 / 0.18);
+
+  /* Escala de datos (gráficos, distribuciones) */
+  --color-case-data-1: #ddd6fe;
+  --color-case-data-2: #c4b5fd;
+  --color-case-data-3: #a78bfa;
+  --color-case-data-4: #8b5cf6;
+  --color-case-data-5: #6d28d9;
+
+  /* Estados (solo para celdas de matriz, alertas o badges) */
+  --color-case-amber: #fbbf24;
+  --color-case-teal: #2dd4bf;
+  --color-case-rose: #fb7185;
+  --color-case-green: #4ade80;
+
+  /* Tipografía: mono para títulos y etiquetas, sans para cuerpo */
+  --font-case-sans: ui-sans-serif, system-ui, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+@layer base {
+  .case-study {
+    font-family: var(--font-case-sans);
+    color: var(--color-case-ink);
+    line-height: 1.6;
+  }
+  .case-study h1,
+  .case-study h2,
+  .case-study h3,
+  .case-study .case-eyebrow,
+  .case-study code,
+  .case-study pre {
+    font-family: var(--font-mono);
+  }
+  /* Evita que el contenido de una celda de grid fuerce scroll horizontal en móvil */
+  .case-study .grid > * {
+    min-width: 0;
+  }
+}
