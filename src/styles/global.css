@@ -48,6 +48,12 @@
   --color-case-accent-soft: rgb(2 132 199 / 0.18);
 }
 
+.case-theme-red {
+  --color-case-accent: #e11d48;                 /* rose-600, rojo del esquema de Laravel */
+  --color-case-accent-text: #fda4af;            /* rose-300 */
+  --color-case-accent-soft: rgb(225 29 72 / 0.18);
+}
+
 @layer base {
   .case-study {
     font-family: var(--font-case-sans);
